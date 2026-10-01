@@ -1,0 +1,2408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Fungi Study Arcade</title>
+    <style>
+      :root {
+        --bg-1: #0b1b1b;
+        --bg-2: #163f39;
+        --panel: rgba(12, 20, 19, 0.94);
+        --card: rgba(255, 255, 255, 0.04);
+        --line: rgba(255, 255, 255, 0.12);
+        --green: #77d995;
+        --green-2: #2fa05d;
+        --gold: #f2c96b;
+        --red: #f16767;
+        --text: #edf8f1;
+        --muted: #d7ebdf;
+        --grass-1: #234b35;
+        --grass-2: #153f2b;
+        --table-green: #0a7e55;
+        --table-dark: #0f5d43;
+        --rail: #a76d3a;
+        --pool-blue: #4b7bf3;
+        --pool-red: #d85d5d;
+        --pool-yellow: #f1d663;
+        --pool-purple: #9a62da;
+        --ball: 32px;
+        --pocket: 42px;
+        --pocket-off: 10px;
+      }
+
+      * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+        color: var(--text);
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 12px;
+      }
+      button { touch-action: manipulation; font-family: inherit; }
+      .app {
+        width: min(1200px, 100%);
+        height: calc(100vh - 24px);
+        height: calc(100dvh - 24px);
+      }
+      .screen {
+        display: none;
+        height: calc(100vh - 24px);
+        height: calc(100dvh - 24px);
+        min-height: 0;
+        background: rgba(8, 20, 18, 0.9);
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        box-shadow: 0 24px 52px rgba(0,0,0,0.28);
+        padding: 18px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .screen.active { display: block; }
+      h1, h2, h3, p { margin-top: 0; }
+
+      .main-header {
+        text-align: center;
+        padding-top: 30px;
+        margin-bottom: 30px;
+      }
+      .main-header h1 {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        margin-bottom: 8px;
+      }
+      .main-header p {
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .mode-grid {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 22px;
+        flex-wrap: wrap;
+      }
+      .mode-card {
+        width: min(360px, 100%);
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 30px 22px 22px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      }
+      .mode-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(119, 217, 149, 0.85);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      }
+      .mode-card .emoji {
+        display: block;
+        font-size: 3.4rem;
+        margin-bottom: 10px;
+      }
+      .mode-card h2 {
+        margin-bottom: 10px;
+        font-size: clamp(2rem, 2.6vw, 2.5rem);
+      }
+      .mode-card p {
+        margin: 0 0 16px;
+        color: var(--muted);
+        line-height: 1.5;
+        font-size: 1.05rem;
+      }
+      .card-help {
+        appearance: none;
+        background: transparent;
+        border: 1px solid var(--line);
+        color: var(--muted);
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-size: 0.92rem;
+        cursor: pointer;
+      }
+      .card-help:hover { border-color: rgba(242, 201, 107, 0.8); color: var(--text); }
+      .modal-box {
+        max-width: 560px;
+        margin: 90px auto 0;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 28px;
+      }
+      .modal-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .modal-actions .action-btn { flex: 1 1 140px; }
+      .lang-buttons, .difficulty-buttons, .pool-type-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .option-btn, .action-btn {
+        appearance: none;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.04);
+        color: var(--text);
+        border-radius: 14px;
+        padding: 16px 18px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      }
+      .option-btn:hover, .action-btn:hover {
+        background: rgba(119, 217, 149, 0.08);
+        border-color: rgba(119, 217, 149, 0.8);
+      }
+      .option-btn.primary, .action-btn.primary {
+        background: linear-gradient(135deg, var(--green), var(--green-2));
+        color: #062d1d;
+        border-color: transparent;
+        font-weight: 700;
+      }
+      .difficulty-buttons .option-btn[data-difficulty="easy"] {
+        background: rgba(119, 217, 149, 0.2);
+        border-color: rgba(119, 217, 149, 0.7);
+        font-weight: 400;
+      }
+      .difficulty-buttons .option-btn {
+        color: var(--text);
+      }
+      .difficulty-buttons .option-btn[data-difficulty="medium"] {
+        background: rgba(242, 201, 107, 0.18);
+        border-color: rgba(242, 201, 107, 0.7);
+      }
+      .difficulty-buttons .option-btn[data-difficulty="hard"] {
+        background: rgba(241, 103, 103, 0.18);
+        border-color: rgba(241, 103, 103, 0.7);
+      }
+      .pool-type-grid .option-btn {
+        background: rgba(255,255,255,0.04);
+        color: var(--text);
+        border-color: var(--line);
+      }
+      .option-btn.correct {
+        background: rgba(119, 217, 149, 0.18);
+        border-color: rgba(119, 217, 149, 0.9);
+      }
+      .option-btn.wrong {
+        background: rgba(241, 103, 103, 0.15);
+        border-color: rgba(241, 103, 103, 0.9);
+      }
+      .action-btn.secondary {
+        background: rgba(242, 201, 107, 0.12);
+        border-color: rgba(242, 201, 107, 0.8);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 9px 14px;
+        font-weight: 700;
+      }
+      .chip.warn { border-color: rgba(242, 201, 107, 0.9); color: var(--gold); }
+      .chip.danger { border-color: rgba(241, 103, 103, 0.95); color: var(--red); }
+
+      .course-box {
+        padding: 16px;
+        background: linear-gradient(180deg, rgba(14, 74, 58, 0.25), rgba(10, 34, 29, 0.6));
+        border: 1px solid var(--line);
+        border-radius: 24px;
+      }
+      .course-track {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 220px);
+        height: calc(100dvh - 220px);
+        min-height: 240px;
+        max-height: 520px;
+        overflow: hidden;
+        background: linear-gradient(180deg, var(--grass-1), var(--grass-2));
+        border-radius: 18px;
+        box-shadow: inset 0 0 0 3px rgba(255,255,255,0.08), inset 0 0 32px rgba(0,0,0,0.2);
+        touch-action: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        cursor: crosshair;
+      }
+      #obstacleLayer {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .ball {
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        left: 0;
+        top: 0;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, #fff, #dfe3e8 30%, #80878f 100%);
+        border: 2px solid rgba(0,0,0,0.3);
+        box-shadow: 0 0 0 4px rgba(255,255,255,0.14), 0 12px 18px rgba(0,0,0,0.25);
+        pointer-events: none;
+        will-change: transform;
+        z-index: 6;
+      }
+      .ball.sunk {
+        transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+        opacity: 0.35;
+      }
+      .hole {
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, #000 0%, #181d1f 34%, #030404 100%);
+        border: 3px solid rgba(255,255,255,0.2);
+        box-shadow: inset 0 0 0 3px rgba(255,255,255,0.12), 0 0 18px rgba(0,0,0,0.35);
+        z-index: 3;
+      }
+      .hole::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -16px;
+        width: 2px;
+        height: 18px;
+        background: #f7f1d4;
+        transform: translateX(-50%);
+      }
+      .hole::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -22px;
+        width: 16px;
+        height: 12px;
+        background: #e9d78d;
+        transform: translateX(-50%);
+        border-radius: 2px 2px 0 0;
+      }
+      .hole.success {
+        box-shadow: 0 0 24px rgba(119,217,149,0.9), 0 0 36px rgba(119,217,149,0.7);
+      }
+      .hole.fail {
+        box-shadow: 0 0 22px rgba(241,103,103,0.9), 0 0 34px rgba(241,103,103,0.7);
+      }
+      .shot-guide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 5;
+      }
+      .pool-shot-guide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 25;
+      }
+      .hidden { display: none !important; }
+
+      .power-meter {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        width: min(170px, 46%);
+        padding: 8px 10px;
+        border-radius: 12px;
+        background: rgba(0,0,0,0.55);
+        border: 1px solid var(--line);
+        font-size: 0.82rem;
+        pointer-events: none;
+        z-index: 27;
+      }
+      .power-meter .power-label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+      .power-bar {
+        height: 8px;
+        border-radius: 99px;
+        background: rgba(255,255,255,0.14);
+        overflow: hidden;
+      }
+      .power-bar > div {
+        height: 100%;
+        width: 0;
+        border-radius: 99px;
+        background: var(--green);
+      }
+      .rotate-tip {
+        display: none;
+        margin: 10px 2px 0;
+        color: var(--muted);
+        font-size: 0.85rem;
+        text-align: center;
+      }
+
+      .floating-result {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: flex-start;
+        justify-content: center;
+        background: rgba(0,0,0,0.66);
+        z-index: 80;
+        padding: 16px;
+        overflow-y: auto;
+      }
+      .floating-result.active { display: flex; }
+      .floating-result > * { margin: auto; }
+      #tutorialOverlay { background: #000; }
+      .result-panel {
+        width: min(520px, 100%);
+        background: rgba(12, 20, 19, 0.97);
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        padding: 30px 24px;
+        text-align: center;
+      }
+      .result-panel.win { border-color: rgba(119, 217, 149, 0.8); }
+      .result-panel.lose { border-color: rgba(241, 103, 103, 0.8); }
+      .result-panel h2 {
+        margin-bottom: 10px;
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+      .panel-actions {
+        margin-top: 18px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .answer-panel {
+        width: min(860px, 100%);
+        background: rgba(12, 20, 19, 0.97);
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        padding: 20px 22px 24px;
+      }
+      .quiz-topline {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+      .question-photo {
+        width: min(100%, 560px);
+        height: 270px;
+        margin: 0 auto 16px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--line);
+        overflow: hidden;
+      }
+      .question-photo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .answer-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+        gap: 12px;
+      }
+      .answer-grid .option-btn {
+        min-height: 78px;
+        padding: 16px 14px;
+      }
+
+      /* ---------- Pool ---------- */
+      .pool-board-wrap {
+        position: relative;
+        width: 100%;
+        padding-top: 2px;
+      }
+      .pool-question {
+        margin-bottom: 14px;
+        font-size: clamp(1.05rem, 2vw, 1.6rem);
+        line-height: 1.3;
+      }
+      .timer-track {
+        height: 8px;
+        border-radius: 99px;
+        background: rgba(255,255,255,0.1);
+        overflow: hidden;
+        margin-bottom: 12px;
+      }
+      #poolTimerBar {
+        height: 100%;
+        width: 100%;
+        background: var(--green);
+        transition: width 0.12s linear, background 0.3s ease;
+      }
+      #poolTimerBar.warn { background: var(--gold); }
+      #poolTimerBar.danger { background: var(--red); }
+      .pool-board {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 270px);
+        height: calc(100dvh - 270px);
+        min-height: 320px;
+        max-height: 560px;
+        border-radius: 24px;
+        padding: 0;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+      }
+      .pool-table-shell {
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        background: linear-gradient(180deg, rgba(12,58,41,0.9), rgba(9,36,27,0.96));
+        border: 12px solid #a56c3a;
+        box-shadow: inset 0 0 0 4px rgba(255,255,255,0.08), 0 18px 24px rgba(0,0,0,0.18);
+      }
+      .pool-cloth {
+        position: absolute;
+        inset: 18px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, var(--table-green), var(--table-dark));
+        border: 2px solid rgba(255,255,255,0.08);
+        box-shadow: inset 0 0 0 2px rgba(255,255,255,0.04);
+        touch-action: none;
+        cursor: crosshair;
+        overflow: hidden;
+      }
+      .pocket {
+        position: absolute;
+        width: var(--pocket);
+        height: var(--pocket);
+        border-radius: 50%;
+        background: #0a0e10;
+        border: 3px solid var(--tone, rgba(255,255,255,0.18));
+        box-shadow: 0 0 0 4px rgba(0,0,0,0.35);
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--tone, #fff);
+        pointer-events: none;
+      }
+      .pocket.tl { left: var(--pocket-off); top: var(--pocket-off); --tone: var(--pool-blue); }
+      .pocket.tr { right: var(--pocket-off); top: var(--pocket-off); --tone: var(--pool-red); }
+      .pocket.bl { left: var(--pocket-off); bottom: var(--pocket-off); --tone: var(--pool-yellow); }
+      .pocket.br { right: var(--pocket-off); bottom: var(--pocket-off); --tone: var(--pool-purple); }
+      .pool-ball {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: var(--ball);
+        height: var(--ball);
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, #ffffff, #ebeff7 26%, #9cb3ff 100%);
+        border: 2px solid rgba(0,0,0,0.32);
+        box-shadow: 0 12px 18px rgba(0,0,0,0.22);
+        z-index: 30;
+        pointer-events: none;
+        will-change: transform;
+      }
+      .answer-option {
+        position: absolute;
+        width: 210px;
+        min-height: 64px;
+        padding: 9px 10px;
+        border-radius: 16px;
+        z-index: 35;
+        font-size: 0.92rem;
+        line-height: 1.25;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        text-align: left;
+        border-color: var(--tone);
+        border-width: 2px;
+        pointer-events: none;
+        cursor: default;
+      }
+      .answer-option .slot-badge {
+        flex: 0 0 auto;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--tone);
+        color: #0b1b1b;
+        font-size: 0.75rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .answer-option .slot-text { flex: 1 1 auto; overflow-wrap: anywhere; }
+      .slot-tl { left: 92px; top: 30px; --tone: var(--pool-blue); }
+      .slot-tr { right: 92px; top: 30px; --tone: var(--pool-red); }
+      .slot-bl { left: 92px; bottom: 30px; --tone: var(--pool-yellow); }
+      .slot-br { right: 92px; bottom: 30px; --tone: var(--pool-purple); }
+      .tut-head h2 { margin: 0; font-size: 1.6rem; }
+      .seg {
+        display: inline-flex;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .seg button {
+        appearance: none;
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        padding: 9px 16px;
+        font-size: 0.92rem;
+        cursor: pointer;
+      }
+      .seg button.on {
+        background: rgba(119, 217, 149, 0.2);
+        color: var(--text);
+        font-weight: 700;
+      }
+      .tut-demo {
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        margin-bottom: 14px;
+        background: rgba(0,0,0,0.25);
+      }
+      .tut-demo svg { display: block; width: 100%; height: auto; max-height: 230px; }
+      .tut-intro { color: var(--muted); line-height: 1.5; margin-bottom: 12px; }
+      .tut-steps {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 10px;
+        counter-reset: step;
+      }
+      .tut-steps li {
+        counter-increment: step;
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 12px;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--card);
+      }
+      .tut-steps li::before {
+        content: counter(step);
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--green), var(--green-2));
+        color: #062d1d;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tut-steps strong { display: block; margin-bottom: 3px; }
+      .tut-steps span { color: var(--muted); line-height: 1.45; font-size: 0.95rem; }
+      .tut-tip {
+        margin: 14px 0 0;
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(242, 201, 107, 0.6);
+        background: rgba(242, 201, 107, 0.1);
+        font-size: 0.92rem;
+      }
+      .tut-foot { margin-top: 16px; display: flex; justify-content: flex-end; }
+
+      @media (max-width: 720px) {
+        body { padding: 6px; }
+        .app { width: 100%; height: calc(100vh - 12px); height: calc(100dvh - 12px); }
+        .screen {
+          height: calc(100vh - 12px);
+          height: calc(100dvh - 12px);
+          padding: 12px;
+          border-radius: 18px;
+        }
+        .main-header { padding-top: 10px; margin-bottom: 20px; }
+        .modal-box { margin-top: 20px; padding: 20px; }
+        .topbar {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          align-items: center;
+          gap: 8px;
+        }
+        .chip {
+          justify-content: center;
+          min-height: 44px;
+          padding: 8px 10px;
+          font-size: 0.92rem;
+        }
+        .topbar .action-btn { min-height: 44px; padding: 8px 10px; }
+        .answer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+        .answer-grid .option-btn { min-height: 58px; padding: 10px 8px; font-size: 0.9rem; }
+        .answer-panel { padding: 14px 14px 18px; border-radius: 20px; }
+        .answer-panel h3 { font-size: 1.05rem; }
+        .question-photo { height: 190px; }
+        .course-box { padding: 8px; border-radius: 18px; }
+        .course-track {
+          max-height: 640px;
+          height: clamp(260px, calc(100dvh - 210px), 640px);
+          min-height: 0;
+        }
+        .tutorial-panel { padding: 16px 14px 18px; border-radius: 20px; }
+        .tut-head h2 { font-size: 1.3rem; }
+      }
+
+      /* Portrait phones: answer labels move above and below the table */
+      @media (max-width: 720px) and (orientation: portrait) {
+        :root { --ball: 26px; --pocket: 34px; --pocket-off: 6px; }
+        .rotate-tip { display: block; }
+        .pool-board {
+          height: auto;
+          min-height: 0;
+          max-height: none;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto auto auto;
+          gap: 8px;
+        }
+        .pool-table-shell {
+          position: relative;
+          inset: auto;
+          grid-column: 1 / 3;
+          grid-row: 2;
+          height: clamp(230px, calc(100vh - 500px), 420px);
+          height: clamp(230px, calc(100dvh - 500px), 420px);
+          border-width: 8px;
+          border-radius: 16px;
+        }
+        .pool-cloth { inset: 10px; }
+        .answer-option {
+          position: static;
+          width: auto;
+          min-height: 62px;
+          font-size: 0.74rem;
+          padding: 8px;
+          gap: 7px;
+        }
+        .answer-option .slot-badge { width: 20px; height: 20px; font-size: 0.68rem; }
+        .slot-tl { grid-column: 1; grid-row: 1; }
+        .slot-tr { grid-column: 2; grid-row: 1; }
+        .slot-bl { grid-column: 1; grid-row: 3; }
+        .slot-br { grid-column: 2; grid-row: 3; }
+        .pocket { font-size: 0.68rem; }
+      }
+
+      /* Short landscape screens (phones on their side) */
+      @media (max-height: 520px) {
+        .screen { padding: 10px; }
+        .main-header { padding-top: 0; margin-bottom: 14px; }
+        .main-header h1 { font-size: 2rem; }
+        .mode-card { padding: 16px 14px; }
+        .mode-card .emoji { font-size: 2.2rem; }
+        .topbar { margin-bottom: 8px; }
+        .chip { padding: 6px 10px; }
+        .course-box { padding: 6px; }
+        .course-track { height: calc(100dvh - 92px); min-height: 200px; }
+        .pool-question { font-size: 0.95rem; margin-bottom: 8px; }
+        .timer-track { margin-bottom: 8px; }
+        .pool-board { height: calc(100dvh - 165px); min-height: 215px; }
+        .answer-option { width: 170px; min-height: 46px; font-size: 0.72rem; padding: 6px 8px; }
+        .slot-tl, .slot-bl { left: 82px; }
+        .slot-tr, .slot-br { right: 82px; }
+        .slot-tl, .slot-tr { top: 22px; }
+        .slot-bl, .slot-br { bottom: 22px; }
+        .question-photo { height: 150px; margin-bottom: 10px; }
+        .answer-panel { padding: 10px 14px 14px; }
+        .quiz-topline { margin-bottom: 8px; }
+        .modal-box { margin-top: 8px; padding: 16px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .mode-card, .option-btn, .action-btn { transition: none; }
+        #poolTimerBar { transition: none; }
+      }
+    </style>
+    <script src="pool-questions.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <section id="mainScreen" class="screen active">
+        <div class="main-header">
+          <h1>Fungi Study Arcade</h1>
+          <p>Choose a game mode and test your fungal knowledge.</p>
+        </div>
+
+        <div class="mode-grid">
+          <div class="mode-card" data-mode="golf">
+            <span class="emoji">⛳</span>
+            <h2>Golf Challenge</h2>
+            <p>Fungal picture recognition</p>
+            <button type="button" class="card-help" data-tutorial="golf">How to play</button>
+          </div>
+
+          <div class="mode-card" data-mode="pool">
+            <span class="emoji">🎱</span>
+            <h2>Pool Quiz</h2>
+            <p>Test questions</p>
+            <button type="button" class="card-help" data-tutorial="pool">How to play</button>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="difficultyScreen" class="screen">
+        <div class="modal-box">
+          <h2>Choose difficulty</h2>
+          <div class="difficulty-buttons">
+            <button class="option-btn primary" data-difficulty="easy">Easy</button>
+            <button class="option-btn" data-difficulty="medium">Medium</button>
+            <button class="option-btn" data-difficulty="hard">Hard</button>
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="action-btn" data-back>Back</button>
+            <button type="button" class="action-btn secondary" data-tutorial="golf">How to play</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="languageScreen" class="screen">
+        <div class="modal-box">
+          <h2>Select species language</h2>
+          <div class="lang-buttons">
+            <button class="option-btn primary" data-language="hu">Hungarian (Magyar)</button>
+            <button class="option-btn" data-language="en">English</button>
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="action-btn" data-back>Back</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="poolTypeScreen" class="screen">
+        <div class="modal-box">
+          <h2>Choose pool mode</h2>
+          <div class="pool-type-grid">
+            <button class="option-btn" data-pooltype="quick">Quick Practice</button>
+            <button class="option-btn" data-pooltype="challenge">Challenge</button>
+            <button class="option-btn" data-pooltype="truefalse">True / False</button>
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="action-btn" data-back>Back</button>
+            <button type="button" class="action-btn secondary" data-tutorial="pool">How to play</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="golfScreen" class="screen">
+        <div class="topbar">
+          <button id="golfMainMenuBtn" class="action-btn secondary">Main page</button>
+          <div class="chip"><span id="lblDifficulty">Difficulty</span>: <strong id="difficultyLabel">Easy</strong></div>
+          <div class="chip"><span id="lblStrokes">Strokes</span>: <strong id="strokeLabel">0</strong></div>
+          <div class="chip"><span id="lblTime">Time</span>: <strong id="timerLabel">00:00</strong></div>
+        </div>
+
+        <div class="course-box">
+          <div id="courseTrack" class="course-track">
+            <div id="obstacleLayer"></div>
+            <div id="hole" class="hole"></div>
+            <div id="ball" class="ball"></div>
+            <svg id="shotGuide" class="shot-guide hidden" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <line id="guidePreview" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-dasharray="4 8" stroke-linecap="round"></line>
+              <line id="guideLine" x1="0" y1="0" x2="0" y2="0" stroke="#77d995" stroke-width="5" stroke-linecap="round"></line>
+              <circle id="guideHandle" cx="0" cy="0" r="8" fill="rgba(255,255,255,0.25)" stroke="#fff" stroke-width="2"></circle>
+            </svg>
+          </div>
+        </div>
+        <p id="rotateTip" class="rotate-tip"></p>
+      </section>
+
+      <section id="poolScreen" class="screen">
+        <div class="topbar">
+          <button id="poolMainMenuBtn" class="action-btn secondary">Main page</button>
+          <div class="chip">Score: <strong id="poolScore">0</strong></div>
+          <div class="chip">Question: <strong id="poolProgress">1/1</strong></div>
+          <div class="chip" id="poolTimerChip">Time: <strong id="poolTimer">25</strong>s</div>
+        </div>
+        <div class="timer-track"><div id="poolTimerBar"></div></div>
+
+        <div class="pool-board-wrap">
+          <div id="poolQuestion" class="pool-question">Question</div>
+          <div id="poolBoard" class="pool-board"></div>
+        </div>
+      </section>
+
+      <div id="resultOverlay" class="floating-result" aria-live="polite">
+        <div id="resultPanel" class="result-panel">
+          <h2 id="resultTitle">Winner</h2>
+          <p id="resultSummary">You finished the round.</p>
+          <div class="panel-actions">
+            <button id="mainMenuBtn" class="action-btn secondary">Main menu</button>
+            <button id="restartBtn" class="action-btn primary">Play again</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="tutorialOverlay" class="floating-result" role="dialog" aria-modal="true" aria-labelledby="tutTitle">
+        <div class="tutorial-panel">
+          <div class="tut-head">
+            <h2 id="tutTitle">How to play</h2>
+          </div>
+          <div id="tutBody"></div>
+          <div class="tut-foot">
+            <button type="button" id="tutClose" class="action-btn primary">Got it</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const speciesBank = [
+        { hu: 'Anyarozs', en: 'Claviceps purpurea', images: ['pictures2/anyarozs=Claviceps purpurea.jpg', 'pictures2/anyarozs=Claviceps purpurea2.webp', 'pictures2/anyarozs=Claviceps purpurea3.jpg'] },
+        { hu: 'Bimbós pöfeteg', en: 'Lycoperdon perlatum', images: ['pictures2/bimbós pöfeteg=Lycoperdon perlatum.jpg', 'pictures2/bimbós pöfeteg=Lycoperdon perlatum2.jpg', 'pictures2/bimbós pöfeteg=Lycoperdon perlatum3.jpg'] },
+        { hu: 'Burgonyavész', en: 'Phytophthora infestans', images: ['pictures2/burgonyavész=Phytophtora infestans.jpg', 'pictures2/burgonyavész=Phytophtora infestans2.jpg', 'pictures2/burgonyavész=Phytophtora infestans3.jpg'] },
+        { hu: 'Császárgomba', en: 'Amanita caesarea', images: ['pictures2/császárgomba=Amanita caesarea.JPG', 'pictures2/császárgomba=Amanita caesarea2.jpg', 'pictures2/császárgomba=Amanita caesarea3.jpg'] },
+        { hu: 'Cservirágos nyálkagomba', en: 'Fuligo septica', images: ['pictures2/cservirágos nyálkagomba=Fuligo septica.jpg', 'pictures2/cservirágos nyálkagomba=Fuligo septica2.jpg', 'pictures2/cservirágos nyálkagomba=Fuligo septica3.jpg'] },
+        { hu: 'Csészegomba', en: 'Sarcoscypha sp.', images: ['pictures2/csészegomba=Sarcoscypha sp..jpg', 'pictures2/csészegomba=Sarcoscypha sp.2.jpg', 'pictures2/csészegomba=Sarcoscypha sp.3.jpg', 'pictures2/csészegomba=Sarcoscypha_sp.4.jpg'] },
+        { hu: 'Ecsetpenész', en: 'Penicillium notatum', images: ['pictures2/ecsetpenész=Penicillium notatum.jpg', 'pictures2/ecsetpenész=Penicillium notatum2.jpg', 'pictures2/ecsetpenész=Penicillium notatum3.jpg'] },
+        { hu: 'Fejespenész', en: 'Mucor mucedo', images: ['pictures2/fejespenész=Mucor_mucedo.jpg', 'pictures2/fejespenész=Mucor_mucedo2.jpg'] },
+        { hu: 'Gabonarozsda', en: 'Puccinia graminis', images: ['pictures2/gabonarozsda=Puccinia graminis.jpg', 'pictures2/gabonarozsda=Puccinia graminis2.jpg', 'pictures2/gabonarozsda=Puccinia graminis3.jpg'] },
+        { hu: 'Gyapjas tintagomba', en: 'Coprinus comatus', images: ['pictures2/gyapjas tintagomba=Coprinus comatus.JPG', 'pictures2/gyapjas tintagomba=Coprinus comatus2.jpg', 'pictures2/gyapjas tintagomba=Coprinus comatus3.jpg'] },
+        { hu: 'Gyilkos galóca', en: 'Amanita phalloides', images: ['pictures2/gyilkos galóca=Amanita phalloides.webp', 'pictures2/gyilkos galóca=Amanita phalloides2.jpg', 'pictures2/gyilkos galóca=Amanita phalloides3.jpg'] },
+        { hu: 'Halpenész', en: 'Saprolegnia sp.', images: ['pictures2/halpenész=Saprolegnia sp..jpg', 'pictures2/halpenész=Saprolegnia sp.2.webp', 'pictures2/halpenész=Saprolegnia sp.3.jpg'] },
+        { hu: 'Ízletes vargánya', en: 'Boletus edulis', images: ['pictures2/ízletes vargánya=Boletus edulis.avif', 'pictures2/ízletes vargánya=Boletus edulis2.jpg', 'pictures2/ízletes vargánya=Boletus edulis3.jpg'] },
+        { hu: 'Kannapenész', en: 'Aspergillus niger', images: ['pictures2/kannapenész=Aspergillus niger.jpg', 'pictures2/kannapenész=Aspergillus niger2.jpg', 'pictures2/kannapenész=Aspergillus niger3.jpg'] },
+        { hu: 'Kucsmagomba', en: 'Morchella esculenta', images: ['pictures2/kucsmagomba=Morchella esculenta.jpg', 'pictures2/kucsmagomba=Morchella esculenta2.jpg', 'pictures2/kucsmagomba=Morchella esculenta3.jpg'] },
+        { hu: 'Kukoricaüszög', en: 'Mycosarcoma maydis', images: ['pictures2/kukoricaüszög=Mycosarcoma maydis.jpg', 'pictures2/kukoricaüszög=Mycosarcoma maydis2.webp', 'pictures2/kukoricaüszög=Mycosarcoma maydis3.jpg'] },
+        { hu: 'Légyölő galóca', en: 'Amanita muscaria', images: ['pictures2/légyölő galóca=Amanita muscaria.jpg', 'pictures2/légyölő galóca=Amanita muscaria2.webp', 'pictures2/légyölő galóca=Amanita muscaria3.webp', 'pictures2/légyölő galóca=Amanita muscaria4.jpg'] },
+        { hu: 'Lepketapló', en: 'Trametes versicolor', images: ['pictures2/lepketapló=Trametes versicolor.jpg', 'pictures2/lepketapló=Trametes versicolor2.jpg', 'pictures2/lepketapló=Trametes versicolor3.jpg'] },
+        { hu: 'Lila pereszke', en: 'Lepista nuda', images: ['pictures2/lila pereszke=Lepista nuda.jpg', 'pictures2/lila pereszke=Lepista nuda2.jpg', 'pictures2/lila pereszke=Lepista nuda3.jpg'] },
+        { hu: 'Lisztharmat', en: 'Erysiphaceae sp.', images: ['pictures/lisztharmat=Erysiphaceae_sp.3.jpg', 'pictures/lisztharmat=Erysiphaceae_sp.4.jpg', 'pictures2/lisztharmat=Erysiphaceae_sp..jpg', 'pictures2/lisztharmat=Erysiphaceae_sp.2.jpg'] },
+        { hu: 'Lycogala', en: 'Lycogala sp.', images: ['pictures/Lycogala sp..jpg', 'pictures/Lycogala sp.2.jpg', 'pictures/Lycogala sp.3.jpg'] },
+        { hu: 'Mezei csiperke', en: 'Agaricus campestris', images: ['pictures/mezei csiperke=Agaricus campestris.jpg', 'pictures/mezei csiperke=Agaricus campestris2.jpg', 'pictures/mezei csiperke=Agaricus campestris3.jpg'] },
+        { hu: 'Monília', en: 'Monilinia sp.', images: ['pictures/monília=Monilinia sp..jpg', 'pictures/monília=Monilinia sp.2.jpg', 'pictures/monília=Monilinia sp.3.jpg'] },
+        { hu: 'Nagy őzlábgomba', en: 'Macrolepiota procera', images: ['pictures/nagy őzlábgomba=Macrolepiota procera.jpg', 'pictures/nagy őzlábgomba=Macrolepiota procera2.jpg', 'pictures/nagy őzlábgomba=Macrolepiota procera3.jpg', 'pictures/nagy őzlábgomba=Macrolepiota procera4.jpg'] },
+        { hu: 'Óriáspöfeteg', en: 'Langermannia gigantea', images: ['pictures/óriáspöfeteg=Langermannia gigantea.JPG', 'pictures/óriáspöfeteg=Langermannia gigantea2.jpg', 'pictures/óriáspöfeteg=Langermannia gigantea3.jpg'] },
+        { hu: 'Papsapkagomba', en: 'Gyromitra sp.', images: ['pictures/papsapkagomba=Gyromitra sp..jpg', 'pictures/papsapkagomba=Gyromitra sp.2.jpeg', 'pictures/papsapkagomba=Gyromitra sp.3.jpg'] },
+        { hu: 'Peronoszpóra', en: 'Plasmopara viticola', images: ['pictures/peronoszpóra=Plasmopara viticola.jpg', 'pictures/peronoszpóra=Plasmopara viticola2.jpg'] },
+        { hu: 'Physarum', en: 'Physarum sp.', images: ['pictures/Physarum sp..jpg', 'pictures/Physarum sp.2.jpg'] },
+        { hu: 'Pythium', en: 'Pythium sp.', images: ['pictures/Pythium sp..jpg', 'pictures/Pythium sp.2.webp'] },
+        { hu: 'Rhizopus', en: 'Rhizopus sp.', images: ['pictures/Rhizopus sp..JPG', 'pictures/Rhizopus sp.2.jpg'] },
+        { hu: 'Sárga korallgomba', en: 'Ramaria flava', images: ['pictures/sárga korallgomba=Ramaria flava.jpg', 'pictures/sárga korallgomba=Ramaria flava2.jpg', 'pictures/sárga korallgomba=Ramaria flava3.jpg'] },
+        { hu: 'Sárga rókagomba', en: 'Cantharellus cibarius', images: ['pictures/sárga rókagomba=Cantharellus cibarius.jpg', 'pictures/sárga rókagomba=Cantharellus cibarius2.jpg', 'pictures/sárga rókagomba=Cantharellus cibarius3.jpg'] },
+        { hu: 'Sátántinóru', en: 'Rubroboletus sp.', images: ['pictures/sátántinóru=Rubroboletus sp..webp', 'pictures/sátántinóru=Rubroboletus sp.2.jpg'] },
+        { hu: 'Sörélesztő', en: 'Saccharomyces cerevisiae', images: ['pictures/sörélesztő=Saccharomyces cerevisiae.jpg', 'pictures/sörélesztő=Saccharomyces cerevisiae2.jpg', 'pictures/sörélesztő=Saccharomyces cerevisiae3.webp'] },
+        { hu: 'Szarvasgomba', en: 'Tuber sp.', images: ['pictures/szarvasgomba=Tuber sp..jpg', 'pictures/szarvasgomba=Tuber sp.2.jpg'] },
+        { hu: 'Szömörcsög', en: 'Phallus sp.', images: ['pictures/szömörcsög=Phallus sp..jpg', 'pictures/szömörcsög=Phallus sp.2.jpg', 'pictures/szömörcsög=Phallus sp.3.jpg'] },
+        { hu: 'Szürkepenész', en: 'Botrytis cinerea', images: ['pictures/szürkepenész=Botrytis cinerea.jpg', 'pictures/szürkepenész=Botrytis cinerea2.webp', 'pictures/szürkepenész=Botrytis cinerea3.jpg'] },
+        { hu: 'Tuskógomba', en: 'Armillaria sp.', images: ['pictures/tuskógomba=Armillaria sp..jpg', 'pictures/tuskógomba=Armillaria sp.2.jpg', 'pictures/tuskógomba=Armillaria sp.3.webp'] }
+      ];
+
+      const basePoolQuestions = [
+        { question: 'Which of the following best distinguishes fungi from plants?', options: ['They are multicellular and photosynthetic', 'They get organic nutrients by absorption and lack chlorophyll', 'They have roots and leaves', 'They have peptidoglycan cell walls'], correct: 1 },
+        { question: 'The main structural polysaccharide in most fungal cell walls is:', options: ['Cellulose', 'Chitin', 'Starch', 'Peptidoglycan'], correct: 1 },
+        { question: 'A mass of interconnected fungal hyphae is called a:', options: ['Spore', 'Mycelium', 'Basidium', 'Stipe'], correct: 1 },
+        { question: 'Which structure is characteristic of a zygomycete such as Mucor?', options: ['Ascus', 'Basidium', 'Zygospore', 'Pollen grain'], correct: 2 },
+        { question: 'Which type of fungus is most closely associated with basidia and basidiospores?', options: ['Ascomycota', 'Basidiomycota', 'Myxomycetes', 'Oomycota'], correct: 1 },
+        { question: 'Which group produces sexual spores inside asci?', options: ['Basidiomycota', 'Ascomycota', 'Oomycota', 'Myxomycetes'], correct: 1 },
+        { question: 'Which fungal process is essential for bread dough rising?', options: ['Photosynthesis', 'Alcoholic fermentation', 'Nitrogen fixation', 'Cellular respiration'], correct: 1 },
+        { question: 'Penicillin is produced by a species of:', options: ['Mucor', 'Penicillium', 'Amanita', 'Saccharomyces'], correct: 1 },
+        { question: 'Who is credited with the discovery of penicillin’s antibacterial action?', options: ['Robert Koch', 'Alexander Fleming', 'Louis Pasteur', 'Carl Linnaeus'], correct: 1 },
+        { question: 'Mycorrhiza is a mutualistic association mainly between a fungus and:', options: ['A plant root', 'A virus', 'A bacterium', 'A fish'], correct: 0 },
+        { question: 'A sporangium is most directly associated with:', options: ['Production of spores in some fungi', 'Photosynthesis in algae', 'Fermentation by bacteria', 'Root absorption in plants'], correct: 0 },
+        { question: 'Which of the following is a common feature of fungi and animals?', options: ['Both are autotrophic', 'Both are eukaryotic and heterotrophic', 'Both have chloroplasts', 'Both have cellulose walls'], correct: 1 },
+        { question: 'The visible cap of a mushroom is called the:', options: ['Pileus', 'Stipe', 'Volva', 'Rhizoid'], correct: 0 },
+        { question: 'Which fungus is famous for the production of alcoholic fermentation in brewing?', options: ['Saccharomyces cerevisiae', 'Claviceps purpurea', 'Aspergillus niger', 'Botrytis cinerea'], correct: 0 },
+        { question: 'What is the main function of the fungal mycelium?', options: ['Photosynthesis', 'Absorption and spreading through the substrate', 'Seed production', 'Movement'], correct: 1 },
+        { question: 'In a typical fungal life cycle, zygospores are associated with:', options: ['Sexual reproduction', 'Photosynthesis', 'Binary fission', 'Pollination'], correct: 0 },
+        { question: 'Powdery mildew is usually a fungal disease of:', options: ['Above-ground plant tissues', 'Animal blood', 'Soil bacteria', 'Fungal spores only'], correct: 0 },
+        { question: 'Which of the following is an example of a fungal antibiotic?', options: ['Penicillin', 'Insulin', 'Chlorophyll', 'DNA polymerase'], correct: 0 },
+        { question: 'A fungus that grows on dead organic material and decomposes it is called a:', options: ['Saprotroph', 'Autotroph', 'Parasite', 'Moss'], correct: 0 },
+        { question: 'A basidium bears:', options: ['Ascospores', 'Basidiospores', 'Sporangia', 'Zoospores'], correct: 1 }
+      ];
+
+      const poolQuestionSets = (window.poolQuestionSets && Object.keys(window.poolQuestionSets).length)
+        ? { ...window.poolQuestionSets }
+        : { quick: basePoolQuestions, challenge: basePoolQuestions, truefalse: basePoolQuestions };
+
+      /* Obstacles are [x, y, width, height] as fractions of the course size. */
+      const obstaclePresets = {
+        easy: [
+          [[0.26, 0.16, 0.09, 0.42], [0.44, 0.48, 0.18, 0.16], [0.67, 0.14, 0.09, 0.4]],
+          [[0.28, 0.42, 0.08, 0.42], [0.43, 0.14, 0.16, 0.14], [0.67, 0.16, 0.08, 0.36]],
+          [[0.27, 0.12, 0.08, 0.3], [0.41, 0.55, 0.17, 0.18], [0.66, 0.31, 0.08, 0.42]],
+          [[0.28, 0.12, 0.1, 0.36], [0.47, 0.38, 0.08, 0.46], [0.66, 0.12, 0.08, 0.29]],
+          [[0.26, 0.16, 0.07, 0.45], [0.4, 0.16, 0.17, 0.15], [0.65, 0.42, 0.08, 0.34]]
+        ],
+        medium: [
+          [[0.22, 0.16, 0.07, 0.46], [0.34, 0.12, 0.09, 0.22], [0.47, 0.52, 0.15, 0.16], [0.62, 0.18, 0.09, 0.38], [0.76, 0.26, 0.07, 0.24], [0.39, 0.76, 0.12, 0.1]],
+          [[0.23, 0.12, 0.06, 0.38], [0.34, 0.48, 0.09, 0.42], [0.43, 0.14, 0.15, 0.13], [0.52, 0.55, 0.08, 0.37], [0.61, 0.17, 0.06, 0.31], [0.7, 0.54, 0.07, 0.3]],
+          [[0.24, 0.5, 0.07, 0.37], [0.33, 0.13, 0.06, 0.32], [0.42, 0.28, 0.14, 0.14], [0.53, 0.12, 0.07, 0.36], [0.61, 0.54, 0.07, 0.34], [0.7, 0.3, 0.07, 0.34]],
+          [[0.25, 0.12, 0.07, 0.3], [0.35, 0.56, 0.07, 0.34], [0.43, 0.16, 0.12, 0.14], [0.51, 0.32, 0.07, 0.4], [0.6, 0.12, 0.07, 0.36], [0.7, 0.55, 0.07, 0.28]],
+          [[0.23, 0.2, 0.07, 0.4], [0.34, 0.12, 0.07, 0.32], [0.43, 0.55, 0.14, 0.14], [0.53, 0.19, 0.07, 0.31], [0.61, 0.54, 0.07, 0.32], [0.7, 0.12, 0.07, 0.39]]
+        ],
+        hard: [
+          [[0.2, 0.18, 0.06, 0.38], [0.29, 0.12, 0.07, 0.2], [0.38, 0.52, 0.12, 0.14], [0.49, 0.2, 0.07, 0.26], [0.58, 0.12, 0.06, 0.32], [0.66, 0.48, 0.08, 0.18], [0.37, 0.78, 0.08, 0.1], [0.7, 0.12, 0.06, 0.22]],
+          [[0.2, 0.12, 0.06, 0.3], [0.28, 0.48, 0.06, 0.4], [0.36, 0.12, 0.07, 0.2], [0.44, 0.32, 0.12, 0.14], [0.55, 0.52, 0.06, 0.38], [0.63, 0.12, 0.06, 0.32], [0.7, 0.42, 0.06, 0.34], [0.39, 0.78, 0.1, 0.1]],
+          [[0.2, 0.5, 0.06, 0.36], [0.28, 0.12, 0.06, 0.28], [0.36, 0.42, 0.06, 0.4], [0.44, 0.12, 0.12, 0.14], [0.55, 0.36, 0.06, 0.38], [0.63, 0.12, 0.06, 0.28], [0.7, 0.52, 0.06, 0.3], [0.3, 0.78, 0.1, 0.1]],
+          [[0.2, 0.12, 0.06, 0.34], [0.28, 0.4, 0.06, 0.4], [0.36, 0.12, 0.06, 0.22], [0.44, 0.52, 0.12, 0.14], [0.55, 0.12, 0.06, 0.36], [0.63, 0.44, 0.06, 0.36], [0.7, 0.12, 0.06, 0.22], [0.38, 0.78, 0.1, 0.1]],
+          [[0.2, 0.32, 0.06, 0.42], [0.28, 0.12, 0.06, 0.26], [0.36, 0.54, 0.06, 0.3], [0.44, 0.12, 0.12, 0.14], [0.55, 0.3, 0.06, 0.42], [0.63, 0.12, 0.06, 0.3], [0.7, 0.5, 0.06, 0.32], [0.32, 0.78, 0.1, 0.1]]
+        ]
+      };
+
+      /*
+        Golf tuning
+        reach  = how far (as a fraction of the course width) a full-power shot rolls on open grass
+        bounce = how much speed the ball keeps when it hits an obstacle (lower = less bouncy)
+      */
+      const difficultySettings = {
+        easy:   { startRatioX: 0.12, startRatioY: 0.56, holeRatioX: 0.84, holeRatioY: 0.52, reach: 0.85, bounce: 0.28 },
+        medium: { startRatioX: 0.10, startRatioY: 0.54, holeRatioX: 0.85, holeRatioY: 0.48, reach: 0.75, bounce: 0.32 },
+        hard:   { startRatioX: 0.09, startRatioY: 0.52, holeRatioX: 0.88, holeRatioY: 0.44, reach: 0.65, bounce: 0.36 }
+      };
+      const GOLF_WALL_BOUNCE = 0.25;
+      const POOL_WALL_BOUNCE = 0.78;
+      const POOL_TIME_SECONDS = 25;
+
+      /* Rolling friction: speed loses k*speed + c per second. Units are pixels and seconds. */
+      const FRICTION = {
+        golf: { k: 2.0, c: 40 },
+        pool: { k: 1.6, c: 50 }
+      };
+
+      const I18N = {
+        en: {
+          question: 'Which fungus is shown in the picture?',
+          questionN: (n) => `Question ${n}`,
+          mainPage: 'Main page',
+          difficulty: 'Difficulty',
+          strokes: 'Strokes',
+          time: 'Time',
+          questionHu: 'Melyik gomba látható a képen?',
+          diffNames: { easy: 'Easy', medium: 'Medium', hard: 'Hard' },
+          wrongTitle: 'Wrong answer',
+          wrongSummary: (c) => `The correct answer was: ${c}`,
+          winTitle: 'Winner',
+          winSummary: (t, s) => `You won in ${t} with ${s} ${s === 1 ? 'stroke' : 'strokes'}.`,
+          rotateTip: 'Tip: turn your phone sideways for a bigger course.',
+          mainMenu: 'Main menu',
+          playAgain: 'Play again',
+          imgAlt: 'Fungus'
+        }
+      };
+
+      const state = {
+        currentMode: null,
+        difficulty: 'easy',
+        language: 'hu',
+        selectedPoolType: 'quick',
+        lastPreset: { easy: -1, medium: -1, hard: -1 },
+        golf: {
+          token: 0,
+          startedAt: 0,
+          questionIndex: 0,
+          questionList: [],
+          shotReady: false,
+          dragging: false,
+          rolling: false,
+          strokeCount: 0,
+          presetRatios: [],
+          obstacles: [],
+          ball: { x: 0, y: 0, vx: 0, vy: 0 },
+          hole: { x: 0, y: 0 },
+          ballR: 14,
+          holeR: 22,
+          trackW: 0,
+          trackH: 0,
+          maxPull: 200,
+          maxSpeed: 1500,
+          dragStart: { x: 0, y: 0 },
+          drag: { dx: 0, dy: 0 },
+          lastT: 0
+        },
+        pool: {
+          questions: [],
+          currentIndex: 0,
+          score: 0,
+          timeouts: 0,
+          token: 0,
+          locked: false,
+          sinking: false,
+          rolling: false,
+          dragging: false,
+          deadline: 0,
+          timerId: null,
+          cloth: null,
+          cueEl: null,
+          slotEls: [],
+          geo: null,
+          cue: { x: 0, y: 0, vx: 0, vy: 0 },
+          dragStart: { x: 0, y: 0 }
+        }
+      };
+
+      const $ = (id) => document.getElementById(id);
+      const difficultyLabel = $('difficultyLabel');
+      const timerLabel = $('timerLabel');
+      const strokeLabel = $('strokeLabel');
+      const ball = $('ball');
+      const hole = $('hole');
+      const courseTrack = $('courseTrack');
+      const shotGuide = $('shotGuide');
+      const guideLine = $('guideLine');
+      const guidePreview = $('guidePreview');
+      const guideHandle = $('guideHandle');
+      const resultOverlay = $('resultOverlay');
+      const resultPanel = $('resultPanel');
+      const resultTitle = $('resultTitle');
+      const resultSummary = $('resultSummary');
+
+      /* ---------- helpers ---------- */
+
+      function clamp(value, min, max) {
+        return Math.min(max, Math.max(min, value));
+      }
+
+      function T() {
+        return I18N.en;
+      }
+
+      function showScreen(screenName) {
+        const map = {
+          main: 'mainScreen',
+          difficulty: 'difficultyScreen',
+          language: 'languageScreen',
+          poolType: 'poolTypeScreen',
+          golf: 'golfScreen',
+          pool: 'poolScreen'
+        };
+        const target = map[screenName] || screenName;
+        ['mainScreen', 'difficultyScreen', 'languageScreen', 'poolTypeScreen', 'golfScreen', 'poolScreen'].forEach((id) => {
+          const el = $(id);
+          el.classList.toggle('active', id === target);
+          if (id === target) el.scrollTop = 0;
+        });
+      }
+
+      function shuffle(items) {
+        const arr = [...items];
+        for (let i = arr.length - 1; i > 0; i -= 1) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      }
+
+      function formatTime(ms) {
+        const total = Math.floor(ms / 1000);
+        const minutes = String(Math.floor(total / 60)).padStart(2, '0');
+        const seconds = String(total % 60).padStart(2, '0');
+        return `${minutes}:${seconds}`;
+      }
+
+      function powerColor(power) {
+        return `hsl(${Math.round(125 - 125 * power)} 85% 58%)`;
+      }
+
+      /* distance a ball rolls from launch speed v with speed loss  dv/dt = -(k v + c) */
+      function distanceForSpeed(v, f) {
+        if (v <= 0) return 0;
+        return v / f.k - (f.c / (f.k * f.k)) * Math.log(1 + (f.k * v) / f.c);
+      }
+
+      function speedForDistance(distance, f) {
+        let lo = 0;
+        let hi = distance * f.k + 50;
+        while (distanceForSpeed(hi, f) < distance) hi *= 2;
+        for (let i = 0; i < 50; i += 1) {
+          const mid = (lo + hi) / 2;
+          if (distanceForSpeed(mid, f) < distance) lo = mid;
+          else hi = mid;
+        }
+        return (lo + hi) / 2;
+      }
+
+      function normalizeDisplayName(value) {
+        if (!value) return '';
+        return value
+          .trim()
+          .replace(/_/g, ' ')
+          .replace(/\s+/g, ' ')
+          .replace(/\.+$/, '')
+          .trim();
+      }
+
+      function formatSpeciesName(entry, language) {
+        if (!entry) return '';
+        const value = entry[language] || entry.hu || entry.en || '';
+        const formatted = normalizeDisplayName(value);
+        if (language === 'hu') return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+        return formatted.replace(/\bsp\.?$/i, 'sp.');
+      }
+
+      /* ---------- golf: questions ---------- */
+
+      function buildGolfQuestionSet(previousQuestions = []) {
+        const previousImages = new Map(previousQuestions.map((question) => [question.correct, question.image]));
+        const allSpecies = speciesBank.map((entry) => {
+          const correct = formatSpeciesName(entry, state.language);
+          let images = entry.images;
+          const previousImage = previousImages.get(correct);
+          if (previousImage && images.length > 1) {
+            const alternatives = images.filter((image) => image !== previousImage);
+            if (alternatives.length) images = alternatives;
+          }
+          return { correct, image: images[Math.floor(Math.random() * images.length)] };
+        });
+
+        const questions = shuffle(allSpecies).map((item) => {
+          const distractors = shuffle(
+            speciesBank
+              .map((entry) => formatSpeciesName(entry, state.language))
+              .filter((name) => name !== item.correct)
+          ).slice(0, 3);
+
+          return {
+            correct: item.correct,
+            image: item.image,
+            options: shuffle([item.correct, ...distractors])
+          };
+        });
+
+        const previousLast = previousQuestions[previousQuestions.length - 1];
+        if (previousLast && questions.length > 1 && questions[0].correct === previousLast.correct) {
+          [questions[0], questions[1]] = [questions[1], questions[0]];
+        }
+        return questions;
+      }
+
+      function closeQuestionOverlay() {
+        const overlay = $('questionOverlay');
+        if (overlay) overlay.remove();
+      }
+
+      function showQuestionOverlay() {
+        closeQuestionOverlay();
+        const q = state.golf.questionList[state.golf.questionIndex];
+        if (!q) return;
+        const L = T();
+        const questionText = state.language === 'hu' ? L.questionHu : L.question;
+        const overlay = document.createElement('div');
+        overlay.id = 'questionOverlay';
+        overlay.className = 'floating-result active';
+
+        overlay.innerHTML = `
+          <div class="answer-panel">
+            <div class="quiz-topline">
+              <button id="questionMainMenuBtn" class="action-btn secondary">${L.mainPage}</button>
+              <div class="chip">${L.questionN(state.golf.questionIndex + 1)}</div>
+            </div>
+            <div class="question-photo">
+              <img src="${q.image}" alt="${L.imgAlt}" />
+            </div>
+            <h3 style="margin-bottom:16px; text-align:left;">${questionText}</h3>
+            <div id="answerGrid" class="answer-grid"></div>
+          </div>
+        `;
+        document.body.appendChild(overlay);
+
+        const questionImage = overlay.querySelector('.question-photo img');
+        questionImage.addEventListener('error', () => {
+          const fallbackSource = q.image.replace(/^pictures\//, 'pictures2/');
+          if (fallbackSource !== q.image) questionImage.src = fallbackSource;
+        }, { once: true });
+
+        const grid = $('answerGrid');
+        q.options.forEach((option) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'option-btn';
+          btn.textContent = option;
+          btn.addEventListener('click', () => handleGolfAnswer(option, btn));
+          grid.appendChild(btn);
+        });
+
+        $('questionMainMenuBtn').addEventListener('click', () => {
+          stopGolf();
+          showScreen('main');
+        });
+      }
+
+      function setDifficulty(difficulty) {
+        state.difficulty = difficulty;
+        difficultyLabel.textContent = T().diffNames[difficulty] || difficulty;
+      }
+
+      function applyGolfLanguage() {
+        const L = T();
+        $('golfMainMenuBtn').textContent = L.mainPage;
+        $('lblDifficulty').textContent = L.difficulty;
+        $('lblStrokes').textContent = L.strokes;
+        $('lblTime').textContent = L.time;
+        $('rotateTip').textContent = L.rotateTip;
+        difficultyLabel.textContent = L.diffNames[state.difficulty];
+      }
+
+      /* ---------- golf: course (chosen once per round) ---------- */
+
+      function golfMetrics(w, h) {
+        const ballR = clamp(Math.min(w, h) * 0.035, 9, 14);
+        return { ballR, holeR: ballR * 1.57 };
+      }
+
+      function placeBall() {
+        const g = state.golf;
+        ball.style.transform = `translate(${g.ball.x - g.ballR}px, ${g.ball.y - g.ballR}px)`;
+      }
+
+      function layoutGolfCourse() {
+        const g = state.golf;
+        const w = courseTrack.clientWidth || 1000;
+        const h = courseTrack.clientHeight || 440;
+        const settings = difficultySettings[state.difficulty];
+        const { ballR, holeR } = golfMetrics(w, h);
+
+        g.trackW = w;
+        g.trackH = h;
+        g.ballR = ballR;
+        g.holeR = holeR;
+        g.hole.x = clamp(w * settings.holeRatioX, holeR + 4, w - holeR - 4);
+        g.hole.y = clamp(h * settings.holeRatioY, holeR + 4, h - holeR - 4);
+        g.obstacles = g.presetRatios.map(([x, y, ow, oh]) => ({ x: w * x, y: h * y, w: w * ow, h: h * oh }));
+        g.maxPull = clamp(Math.min(w, h) * 0.62, 150, 320);
+        g.maxSpeed = speedForDistance(w * settings.reach, FRICTION.golf);
+        g.ball.x = clamp(g.ball.x, ballR, w - ballR);
+        g.ball.y = clamp(g.ball.y, ballR, h - ballR);
+
+        hole.style.width = hole.style.height = `${holeR * 2}px`;
+        hole.style.left = `${g.hole.x - holeR}px`;
+        hole.style.top = `${g.hole.y - holeR}px`;
+        ball.style.width = ball.style.height = `${ballR * 2}px`;
+        placeBall();
+
+        const layer = $('obstacleLayer');
+        layer.innerHTML = '';
+        g.obstacles.forEach((obstacle) => {
+          const block = document.createElement('div');
+          block.style.position = 'absolute';
+          block.style.left = `${obstacle.x}px`;
+          block.style.top = `${obstacle.y}px`;
+          block.style.width = `${obstacle.w}px`;
+          block.style.height = `${obstacle.h}px`;
+          block.style.borderRadius = `${Math.min(12, obstacle.w / 2)}px`;
+          block.style.background = 'linear-gradient(135deg, rgba(104, 68, 50, 0.98), rgba(52, 36, 28, 0.96))';
+          block.style.boxShadow = 'inset 0 0 0 2px rgba(255,255,255,0.14), 4px 8px 14px rgba(0,0,0,0.3)';
+          layer.appendChild(block);
+        });
+      }
+
+      function setupGolfCourse() {
+        const g = state.golf;
+        const w = courseTrack.clientWidth || 1000;
+        const h = courseTrack.clientHeight || 440;
+        const settings = difficultySettings[state.difficulty];
+        const { ballR, holeR } = golfMetrics(w, h);
+        const startX = clamp(w * settings.startRatioX, ballR + 8, w - ballR - 8);
+        const startY = clamp(h * settings.startRatioY, ballR + 8, h - ballR - 8);
+        const holeX = clamp(w * settings.holeRatioX, holeR + 4, w - holeR - 4);
+        const holeY = clamp(h * settings.holeRatioY, holeR + 4, h - holeR - 4);
+
+        const presets = obstaclePresets[state.difficulty] || obstaclePresets.easy;
+        const ranked = presets.map((preset, index) => {
+          const conflicts = preset.reduce((count, [x, y, ow, oh]) => {
+            const ox = w * x, oy = h * y, ow2 = w * ow, oh2 = h * oh;
+            const ballDist = Math.hypot(startX - clamp(startX, ox, ox + ow2), startY - clamp(startY, oy, oy + oh2));
+            const holeDist = Math.hypot(holeX - clamp(holeX, ox, ox + ow2), holeY - clamp(holeY, oy, oy + oh2));
+            return count + Number(ballDist < ballR + 4) + Number(holeDist < ballR + holeR + 4);
+          }, 0);
+          return { index, preset, conflicts };
+        });
+        const fewest = Math.min(...ranked.map((r) => r.conflicts));
+        let candidates = ranked.filter((r) => r.conflicts === fewest);
+        const previous = state.lastPreset[state.difficulty];
+        if (candidates.length > 1) candidates = candidates.filter((r) => r.index !== previous);
+        const chosen = candidates[Math.floor(Math.random() * candidates.length)];
+        state.lastPreset[state.difficulty] = chosen.index;
+
+        g.presetRatios = chosen.preset;
+        g.ball = { x: startX, y: startY, vx: 0, vy: 0 };
+        layoutGolfCourse();
+        hole.classList.remove('success', 'fail');
+        ball.classList.remove('sunk');
+        ball.style.opacity = '';
+        placeBall();
+      }
+
+      function relayoutGolf() {
+        const g = state.golf;
+        const w = courseTrack.clientWidth;
+        const h = courseTrack.clientHeight;
+        if (!w || !h || !g.trackW) return;
+        if (Math.abs(w - g.trackW) < 2 && Math.abs(h - g.trackH) < 2) return;
+        g.ball.x *= w / g.trackW;
+        g.ball.y *= h / g.trackH;
+        layoutGolfCourse();
+      }
+
+      function beginGolfGame() {
+        const g = state.golf;
+        stopGolf();
+        stopPool();
+        resultOverlay.classList.remove('active');
+        applyGolfLanguage();
+        g.questionList = buildGolfQuestionSet();
+        g.questionIndex = 0;
+        g.strokeCount = 0;
+        g.startedAt = Date.now();
+        g.shotReady = false;
+        g.rolling = false;
+        g.dragging = false;
+        strokeLabel.textContent = '0';
+        timerLabel.textContent = '00:00';
+        showScreen('golf');
+        setupGolfCourse();
+        startGolfTimer();
+        const token = g.token;
+        setTimeout(() => {
+          if (token === g.token) showQuestionOverlay();
+        }, 350);
+      }
+
+      function stopGolf() {
+        const g = state.golf;
+        g.token += 1;
+        g.rolling = false;
+        g.dragging = false;
+        g.shotReady = false;
+        clearInterval(window.golfTimer);
+        closeQuestionOverlay();
+        hideShotGuide();
+      }
+
+      function hideShotGuide() {
+        shotGuide.classList.add('hidden');
+      }
+
+      function showShotGuide() {
+        shotGuide.classList.remove('hidden');
+        shotGuide.setAttribute('viewBox', `0 0 ${courseTrack.clientWidth} ${courseTrack.clientHeight}`);
+      }
+
+      /* How far a ray from (x, y) can travel before it meets a wall or block (ball radius r). */
+      function rayReach(x, y, dx, dy, length, w, h, r, boxes) {
+        let t = length;
+        if (dx > 1e-9) t = Math.min(t, (w - r - x) / dx);
+        else if (dx < -1e-9) t = Math.min(t, (r - x) / dx);
+        if (dy > 1e-9) t = Math.min(t, (h - r - y) / dy);
+        else if (dy < -1e-9) t = Math.min(t, (r - y) / dy);
+        t = Math.max(t, 0);
+
+        boxes.forEach((b) => {
+          const left = b.x - r, right = b.x + b.w + r, top = b.y - r, bottom = b.y + b.h + r;
+          let t1 = -Infinity;
+          let t2 = Infinity;
+          if (Math.abs(dx) < 1e-9) {
+            if (x < left || x > right) return;
+          } else {
+            let a = (left - x) / dx;
+            let c = (right - x) / dx;
+            if (a > c) [a, c] = [c, a];
+            t1 = Math.max(t1, a);
+            t2 = Math.min(t2, c);
+          }
+          if (Math.abs(dy) < 1e-9) {
+            if (y < top || y > bottom) return;
+          } else {
+            let a = (top - y) / dy;
+            let c = (bottom - y) / dy;
+            if (a > c) [a, c] = [c, a];
+            t1 = Math.max(t1, a);
+            t2 = Math.min(t2, c);
+          }
+          if (t1 <= t2 && t1 >= -1e-6) t = Math.min(t, Math.max(t1, 0));
+        });
+        return t;
+      }
+
+      function updateGolfAim(dx, dy) {
+        const g = state.golf;
+        const len = Math.hypot(dx, dy);
+        const power = clamp(len / g.maxPull, 0, 1);
+        const shown = Math.min(len, g.maxPull);
+        const ux = len ? dx / len : 0;
+        const uy = len ? dy / len : 0;
+        const color = powerColor(power);
+        const hx = g.ball.x + ux * shown;
+        const hy = g.ball.y + uy * shown;
+
+        guideLine.setAttribute('x1', g.ball.x);
+        guideLine.setAttribute('y1', g.ball.y);
+        guideLine.setAttribute('x2', hx);
+        guideLine.setAttribute('y2', hy);
+        guideLine.setAttribute('stroke', color);
+        guideHandle.setAttribute('cx', hx);
+        guideHandle.setAttribute('cy', hy);
+        guideHandle.setAttribute('stroke', color);
+
+        // The ball flies opposite to the pull, so the preview points the other way.
+        const dirX = -ux;
+        const dirY = -uy;
+        const predicted = distanceForSpeed(power * g.maxSpeed, FRICTION.golf);
+        const reach = len ? rayReach(g.ball.x, g.ball.y, dirX, dirY, predicted, g.trackW, g.trackH, g.ballR, g.obstacles) : 0;
+        guidePreview.setAttribute('x1', g.ball.x);
+        guidePreview.setAttribute('y1', g.ball.y);
+        guidePreview.setAttribute('x2', g.ball.x + dirX * reach);
+        guidePreview.setAttribute('y2', g.ball.y + dirY * reach);
+
+      }
+
+      /* ---------- golf: results, answers, timer ---------- */
+
+      function openResult(title, summary, variant, mainLabel, againLabel) {
+        resultTitle.textContent = title;
+        resultSummary.textContent = summary;
+        $('mainMenuBtn').textContent = mainLabel;
+        $('restartBtn').textContent = againLabel;
+        resultPanel.classList.remove('win', 'lose');
+        resultPanel.classList.add(variant === 'win' ? 'win' : 'lose');
+        resultOverlay.classList.add('active');
+      }
+
+      function showGolfResult(title, summary, variant) {
+        clearInterval(window.golfTimer);
+        const L = T();
+        openResult(title, summary, variant, L.mainMenu, L.playAgain);
+      }
+
+      function handleGolfAnswer(option, btn) {
+        const g = state.golf;
+        const q = g.questionList[g.questionIndex];
+        const token = g.token;
+        const buttons = [...document.querySelectorAll('#answerGrid .option-btn')];
+        buttons.forEach((b) => { b.disabled = true; });
+
+        if (option === q.correct) {
+          btn.classList.add('correct');
+          setTimeout(() => {
+            if (token !== g.token) return;
+            closeQuestionOverlay();
+            g.shotReady = true;
+            hideShotGuide();
+          }, 500);
+        } else {
+          btn.classList.add('wrong');
+          const correctButton = buttons.find((b) => b.textContent === q.correct);
+          if (correctButton) correctButton.classList.add('correct');
+          hole.classList.add('fail');
+          setTimeout(() => {
+            if (token !== g.token) return;
+            closeQuestionOverlay();
+            const L = T();
+            showGolfResult(L.wrongTitle, L.wrongSummary(q.correct), 'lose');
+          }, 1400);
+        }
+      }
+
+      function startGolfTimer() {
+        clearInterval(window.golfTimer);
+        window.golfTimer = setInterval(() => {
+          timerLabel.textContent = formatTime(Date.now() - state.golf.startedAt);
+        }, 250);
+      }
+
+      /* ---------- golf: physics ---------- */
+
+      function collideCircleBox(b, r, o, restitution, tangentLoss) {
+        const cx = clamp(b.x, o.x, o.x + o.w);
+        const cy = clamp(b.y, o.y, o.y + o.h);
+        const dx = b.x - cx;
+        const dy = b.y - cy;
+        const d = Math.hypot(dx, dy);
+        let nx, ny, pen;
+        if (d > 1e-6) {
+          if (d >= r) return false;
+          nx = dx / d;
+          ny = dy / d;
+          pen = r - d;
+        } else {
+          const l = b.x - o.x, rt = o.x + o.w - b.x, t = b.y - o.y, bt = o.y + o.h - b.y;
+          const m = Math.min(l, rt, t, bt);
+          if (m === l) { nx = -1; ny = 0; pen = l + r; }
+          else if (m === rt) { nx = 1; ny = 0; pen = rt + r; }
+          else if (m === t) { nx = 0; ny = -1; pen = t + r; }
+          else { nx = 0; ny = 1; pen = bt + r; }
+        }
+        b.x += nx * pen;
+        b.y += ny * pen;
+        const vn = b.vx * nx + b.vy * ny;
+        if (vn < 0) {
+          const tx = b.vx - vn * nx;
+          const ty = b.vy - vn * ny;
+          const newVn = -vn * restitution;
+          b.vx = tx * (1 - tangentLoss) + newVn * nx;
+          b.vy = ty * (1 - tangentLoss) + newVn * ny;
+        }
+        return true;
+      }
+
+      function golfStep(h) {
+        const g = state.golf;
+        const b = g.ball;
+        const r = g.ballR;
+        const bounce = difficultySettings[state.difficulty].bounce;
+
+        b.x += b.vx * h;
+        b.y += b.vy * h;
+
+        if (b.x < r) { b.x = r; if (b.vx < 0) { b.vx = -b.vx * GOLF_WALL_BOUNCE; b.vy *= 0.94; } }
+        if (b.x > g.trackW - r) { b.x = g.trackW - r; if (b.vx > 0) { b.vx = -b.vx * GOLF_WALL_BOUNCE; b.vy *= 0.94; } }
+        if (b.y < r) { b.y = r; if (b.vy < 0) { b.vy = -b.vy * GOLF_WALL_BOUNCE; b.vx *= 0.94; } }
+        if (b.y > g.trackH - r) { b.y = g.trackH - r; if (b.vy > 0) { b.vy = -b.vy * GOLF_WALL_BOUNCE; b.vx *= 0.94; } }
+
+        g.obstacles.forEach((o) => collideCircleBox(b, r, o, bounce, 0.12));
+
+        const speed = Math.hypot(b.vx, b.vy);
+        if (speed > 0) {
+          const f = FRICTION.golf;
+          const next = Math.max(0, speed * Math.exp(-f.k * h) - f.c * h);
+          const scale = next / speed;
+          b.vx *= scale;
+          b.vy *= scale;
+        }
+
+        // The ball drops in when it reaches the hole at a speed it could realistically fall in at.
+        const toHole = Math.hypot(b.x - g.hole.x, b.y - g.hole.y);
+        return toHole < g.holeR && Math.hypot(b.vx, b.vy) < g.maxSpeed * 0.85;
+      }
+
+      function golfSunk() {
+        const g = state.golf;
+        g.rolling = false;
+        g.ball.vx = 0;
+        g.ball.vy = 0;
+        clearInterval(window.golfTimer);
+        hole.classList.add('success');
+        ball.classList.add('sunk');
+        ball.style.transform = `translate(${g.hole.x - g.ballR}px, ${g.hole.y - g.ballR}px) scale(0.35)`;
+        const token = g.token;
+        const elapsed = Date.now() - g.startedAt;
+        const strokes = g.strokeCount;
+        setTimeout(() => {
+          if (token !== g.token) return;
+          const L = T();
+          showGolfResult(L.winTitle, L.winSummary(formatTime(elapsed), strokes), 'win');
+        }, 450);
+      }
+
+      function golfFrame(now, token) {
+        const g = state.golf;
+        if (token !== g.token || !g.rolling) return;
+        const b = g.ball;
+        const dt = Math.min(0.033, Math.max(0.001, (now - g.lastT) / 1000));
+        g.lastT = now;
+
+        const steps = Math.max(1, Math.ceil((Math.hypot(b.vx, b.vy) * dt) / (g.ballR * 0.4)));
+        const h = dt / steps;
+        for (let i = 0; i < steps; i += 1) {
+          if (golfStep(h)) {
+            placeBall();
+            golfSunk();
+            return;
+          }
+        }
+        placeBall();
+
+        if (Math.hypot(b.vx, b.vy) < 12) {
+          b.vx = 0;
+          b.vy = 0;
+          g.rolling = false;
+          g.questionIndex += 1;
+          if (g.questionIndex >= g.questionList.length) {
+            g.questionList = buildGolfQuestionSet(g.questionList);
+            g.questionIndex = 0;
+          }
+          setTimeout(() => {
+            if (token === g.token) showQuestionOverlay();
+          }, 300);
+          return;
+        }
+        requestAnimationFrame((t) => golfFrame(t, token));
+      }
+
+      function releaseGolfShot(dx, dy) {
+        const g = state.golf;
+        if (!g.shotReady) return;
+        const len = Math.hypot(dx, dy);
+        if (len < 12) return;
+
+        const power = clamp(len / g.maxPull, 0, 1);
+        const speed = power * g.maxSpeed;
+        g.ball.vx = -(dx / len) * speed;
+        g.ball.vy = -(dy / len) * speed;
+
+        // Every shot counts, including the one that drops into the hole.
+        g.strokeCount += 1;
+        strokeLabel.textContent = String(g.strokeCount);
+
+        g.shotReady = false;
+        g.rolling = true;
+        g.lastT = performance.now();
+        const token = g.token;
+        requestAnimationFrame((t) => golfFrame(t, token));
+      }
+
+      function pointInTrack(event) {
+        const rect = courseTrack.getBoundingClientRect();
+        return { x: event.clientX - rect.left, y: event.clientY - rect.top };
+      }
+
+      courseTrack.addEventListener('pointerdown', (event) => {
+        const g = state.golf;
+        if (!g.shotReady || g.rolling || g.dragging) return;
+        if (event.pointerType === 'mouse' && event.button !== 0) return;
+        event.preventDefault();
+        g.dragging = true;
+        g.dragPointerId = event.pointerId;
+        g.dragStart = pointInTrack(event);
+        g.drag = { dx: 0, dy: 0 };
+        try { courseTrack.setPointerCapture(event.pointerId); } catch (e) { /* ignore */ }
+        showShotGuide();
+        updateGolfAim(0, 0);
+      });
+
+      courseTrack.addEventListener('pointermove', (event) => {
+        const g = state.golf;
+        if (!g.dragging || event.pointerId !== g.dragPointerId) return;
+        event.preventDefault();
+        const p = pointInTrack(event);
+        g.drag = { dx: p.x - g.dragStart.x, dy: p.y - g.dragStart.y };
+        updateGolfAim(g.drag.dx, g.drag.dy);
+      });
+
+      function endGolfDrag(event, cancelled) {
+        const g = state.golf;
+        if (!g.dragging || event.pointerId !== g.dragPointerId) return;
+        g.dragging = false;
+        try { courseTrack.releasePointerCapture(event.pointerId); } catch (e) { /* ignore */ }
+        hideShotGuide();
+        if (cancelled) {
+          return;
+        }
+        const p = pointInTrack(event);
+        const dx = p.x - g.dragStart.x;
+        const dy = p.y - g.dragStart.y;
+        releaseGolfShot(dx, dy);
+      }
+
+      courseTrack.addEventListener('pointerup', (event) => endGolfDrag(event, false));
+      courseTrack.addEventListener('pointercancel', (event) => endGolfDrag(event, true));
+
+      /* ---------- pool ---------- */
+
+      const POOL_SLOTS = ['tl', 'tr', 'bl', 'br'];
+      const POOL_LETTERS = ['A', 'B', 'C', 'D'];
+
+      function stopPoolTimer() {
+        clearInterval(state.pool.timerId);
+        state.pool.timerId = null;
+      }
+
+      function stopPool() {
+        const p = state.pool;
+        p.token += 1;
+        p.locked = true;
+        p.rolling = false;
+        p.dragging = false;
+        p.sinking = false;
+        stopPoolTimer();
+      }
+
+      function updatePoolTimer() {
+        const p = state.pool;
+        const left = Math.max(0, p.deadline - performance.now());
+        const seconds = Math.ceil(left / 1000);
+        $('poolTimer').textContent = String(seconds);
+        $('poolTimerBar').style.width = `${(left / (POOL_TIME_SECONDS * 1000)) * 100}%`;
+        const warn = seconds <= 10 && seconds > 5;
+        const danger = seconds <= 5;
+        $('poolTimerBar').classList.toggle('warn', warn);
+        $('poolTimerBar').classList.toggle('danger', danger);
+        $('poolTimerChip').classList.toggle('warn', warn);
+        $('poolTimerChip').classList.toggle('danger', danger);
+        if (left <= 0 && !p.locked) finishPoolQuestion(-1, true);
+      }
+
+      function startPoolTimer() {
+        const p = state.pool;
+        stopPoolTimer();
+        p.deadline = performance.now() + POOL_TIME_SECONDS * 1000;
+        updatePoolTimer();
+        p.timerId = setInterval(updatePoolTimer, 100);
+      }
+
+      function measurePool() {
+        const p = state.pool;
+        const cloth = p.cloth;
+        if (!cloth || !p.cueEl) return false;
+        const W = cloth.clientWidth;
+        const H = cloth.clientHeight;
+        if (!W || !H) return false;
+        const pockets = [...cloth.querySelectorAll('.pocket')].map((el) => ({
+          x: el.offsetLeft + el.offsetWidth / 2,
+          y: el.offsetTop + el.offsetHeight / 2,
+          rad: el.offsetWidth / 2
+        }));
+        p.geo = {
+          W,
+          H,
+          r: p.cueEl.offsetWidth / 2,
+          pockets,
+          capR: pockets[0].rad + 6,
+          maxPull: clamp(Math.min(W, H) * 0.6, 120, 300),
+          maxSpeed: speedForDistance(Math.hypot(W, H), FRICTION.pool)
+        };
+        p.aimSvg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+        return true;
+      }
+
+      function placeCue() {
+        const p = state.pool;
+        if (!p.geo) return;
+        p.cueEl.style.transform = `translate(${p.cue.x - p.geo.r}px, ${p.cue.y - p.geo.r}px)`;
+      }
+
+      function relayoutPool() {
+        const p = state.pool;
+        if (!p.geo || !p.cloth) return;
+        const oldW = p.geo.W;
+        const oldH = p.geo.H;
+        const W = p.cloth.clientWidth;
+        const H = p.cloth.clientHeight;
+        if (!W || !H || (Math.abs(W - oldW) < 2 && Math.abs(H - oldH) < 2)) return;
+        p.cue.x *= W / oldW;
+        p.cue.y *= H / oldH;
+        measurePool();
+        placeCue();
+      }
+
+      /* Straight-line path with cushion bounces, for the aim guide. */
+      function tracePoolPath(x, y, dx, dy, length, W, H, r) {
+        const points = [[x, y]];
+        let remaining = length;
+        let px = x, py = y, vx = dx, vy = dy;
+        for (let i = 0; i < 3 && remaining > 0.5; i += 1) {
+          let t = remaining;
+          let hitX = false, hitY = false;
+          if (vx > 1e-9) { const tt = (W - r - px) / vx; if (tt < t) { t = tt; hitX = true; } }
+          else if (vx < -1e-9) { const tt = (r - px) / vx; if (tt < t) { t = tt; hitX = true; } }
+          if (vy > 1e-9) { const tt = (H - r - py) / vy; if (tt < t) { t = tt; hitY = true; } }
+          else if (vy < -1e-9) { const tt = (r - py) / vy; if (tt < t) { t = tt; hitY = true; } }
+          t = Math.max(t, 0);
+          px += vx * t;
+          py += vy * t;
+          points.push([px, py]);
+          remaining -= t;
+          if (!hitX && !hitY) break;
+          if (hitX) vx = -vx;
+          if (hitY) vy = -vy;
+          remaining *= 0.6;
+        }
+        return points;
+      }
+
+      function hidePoolAim() {
+        const p = state.pool;
+        if (!p.aimSvg) return;
+        p.aimSvg.style.opacity = '0';
+        p.powerEl.classList.add('hidden');
+      }
+
+      function updatePoolAim(dx, dy) {
+        const p = state.pool;
+        const g = p.geo;
+        const len = Math.hypot(dx, dy);
+        if (len < 1) { hidePoolAim(); return; }
+        const ux = dx / len;
+        const uy = dy / len;
+        const power = clamp(len / g.maxPull, 0, 1);
+        const color = powerColor(power);
+        const shown = Math.min(len, g.maxPull);
+        const c = p.cue;
+
+        p.aimSvg.style.opacity = '1';
+        p.aimSolid.setAttribute('x1', c.x);
+        p.aimSolid.setAttribute('y1', c.y);
+        p.aimSolid.setAttribute('x2', c.x + ux * shown);
+        p.aimSolid.setAttribute('y2', c.y + uy * shown);
+        p.aimSolid.setAttribute('stroke', color);
+
+        const predicted = distanceForSpeed(power * g.maxSpeed, FRICTION.pool);
+        const pts = tracePoolPath(c.x, c.y, ux, uy, predicted, g.W, g.H, g.r);
+        const first = pts.slice(0, 2);
+        p.aimPath.setAttribute('points', first.map((q) => q.join(',')).join(' '));
+        p.aimBounce.setAttribute('points', pts.slice(1).map((q) => q.join(',')).join(' '));
+
+        p.powerEl.classList.remove('hidden');
+        p.powerFill.style.width = `${Math.round(power * 100)}%`;
+        p.powerFill.style.background = color;
+        p.powerValue.textContent = `${Math.round(power * 100)}%`;
+      }
+
+      function poolStep(h) {
+        const p = state.pool;
+        const c = p.cue;
+        const g = p.geo;
+        const r = g.r;
+        c.x += c.vx * h;
+        c.y += c.vy * h;
+        if (c.x < r) { c.x = r; c.vx = Math.abs(c.vx) * POOL_WALL_BOUNCE; }
+        if (c.x > g.W - r) { c.x = g.W - r; c.vx = -Math.abs(c.vx) * POOL_WALL_BOUNCE; }
+        if (c.y < r) { c.y = r; c.vy = Math.abs(c.vy) * POOL_WALL_BOUNCE; }
+        if (c.y > g.H - r) { c.y = g.H - r; c.vy = -Math.abs(c.vy) * POOL_WALL_BOUNCE; }
+
+        for (let i = 0; i < g.pockets.length; i += 1) {
+          if (Math.hypot(c.x - g.pockets[i].x, c.y - g.pockets[i].y) < g.capR) return i;
+        }
+
+        const speed = Math.hypot(c.vx, c.vy);
+        if (speed > 0) {
+          const f = FRICTION.pool;
+          const next = Math.max(0, speed * Math.exp(-f.k * h) - f.c * h);
+          const scale = next / speed;
+          c.vx *= scale;
+          c.vy *= scale;
+        }
+        return -1;
+      }
+
+      function sinkCue(pocketIndex, token) {
+        const p = state.pool;
+        const g = p.geo;
+        const pocket = g.pockets[pocketIndex];
+        p.rolling = false;
+        p.sinking = true;
+        p.cue.vx = 0;
+        p.cue.vy = 0;
+        stopPoolTimer();
+        p.cueEl.style.transition = 'transform 0.22s ease-in, opacity 0.22s ease-in';
+        p.cueEl.style.transform = `translate(${pocket.x - g.r}px, ${pocket.y - g.r}px) scale(0.3)`;
+        p.cueEl.style.opacity = '0.25';
+        setTimeout(() => {
+          if (token !== p.token) return;
+          finishPoolQuestion(p.slotEls[pocketIndex].answerIndex, false);
+        }, 260);
+      }
+
+      function poolFrame(now, token) {
+        const p = state.pool;
+        if (token !== p.token || !p.rolling) return;
+        const c = p.cue;
+        const g = p.geo;
+        const dt = Math.min(0.033, Math.max(0.001, (now - p.lastT) / 1000));
+        p.lastT = now;
+        const steps = Math.max(1, Math.ceil((Math.hypot(c.vx, c.vy) * dt) / (g.r * 0.5)));
+        const h = dt / steps;
+        for (let i = 0; i < steps; i += 1) {
+          const hit = poolStep(h);
+          if (hit >= 0) {
+            placeCue();
+            sinkCue(hit, token);
+            return;
+          }
+        }
+        placeCue();
+        if (Math.hypot(c.vx, c.vy) < 12) {
+          c.vx = 0;
+          c.vy = 0;
+          p.rolling = false;
+          return;
+        }
+        requestAnimationFrame((t) => poolFrame(t, token));
+      }
+
+      /* The ball travels the same way it is dragged. */
+      function shootPool(dx, dy) {
+        const p = state.pool;
+        const g = p.geo;
+        const len = Math.hypot(dx, dy);
+        if (len < 12 || p.locked || p.rolling || p.sinking) return;
+        const power = clamp(len / g.maxPull, 0, 1);
+        const speed = power * g.maxSpeed;
+        p.cue.vx = (dx / len) * speed;
+        p.cue.vy = (dy / len) * speed;
+        p.rolling = true;
+        p.lastT = performance.now();
+        const token = p.token;
+        requestAnimationFrame((t) => poolFrame(t, token));
+      }
+
+      function poolPoint(event) {
+        const rect = state.pool.cloth.getBoundingClientRect();
+        return { x: event.clientX - rect.left - state.pool.cloth.clientLeft, y: event.clientY - rect.top - state.pool.cloth.clientTop };
+      }
+
+      function renderPoolBoard() {
+        const p = state.pool;
+        const board = $('poolBoard');
+        board.innerHTML = '';
+
+        const question = p.questions[p.currentIndex];
+        if (!question) return;
+
+        p.token += 1;
+        p.locked = false;
+        p.sinking = false;
+        p.rolling = false;
+        p.dragging = false;
+        const token = p.token;
+
+        $('poolQuestion').textContent = question.question;
+        $('poolProgress').textContent = `${p.currentIndex + 1}/${p.questions.length}`;
+        $('poolScore').textContent = String(p.score);
+
+        const shuffled = shuffle(question.options.map((text, index) => ({ text, answerIndex: index })));
+        // Fewer than four answers (True / False): the answers repeat so every pocket is live.
+        const slots = [0, 1, 2, 3].map((i) => shuffled[i % shuffled.length]);
+
+        const tableShell = document.createElement('div');
+        tableShell.className = 'pool-table-shell';
+
+        const tableCloth = document.createElement('div');
+        tableCloth.className = 'pool-cloth';
+
+        POOL_SLOTS.forEach((slotName, index) => {
+          const pocket = document.createElement('div');
+          pocket.className = `pocket ${slotName}`;
+          pocket.textContent = POOL_LETTERS[index];
+          tableCloth.appendChild(pocket);
+        });
+
+        const svgNS = 'http://www.w3.org/2000/svg';
+        const aimSvg = document.createElementNS(svgNS, 'svg');
+        aimSvg.classList.add('pool-shot-guide');
+        aimSvg.style.opacity = '0';
+        const aimBounce = document.createElementNS(svgNS, 'polyline');
+        aimBounce.setAttribute('fill', 'none');
+        aimBounce.setAttribute('stroke', 'rgba(255,255,255,0.4)');
+        aimBounce.setAttribute('stroke-width', '3');
+        aimBounce.setAttribute('stroke-dasharray', '4 8');
+        aimBounce.setAttribute('stroke-linecap', 'round');
+        const aimPath = document.createElementNS(svgNS, 'polyline');
+        aimPath.setAttribute('fill', 'none');
+        aimPath.setAttribute('stroke', 'rgba(255,255,255,0.9)');
+        aimPath.setAttribute('stroke-width', '3');
+        aimPath.setAttribute('stroke-dasharray', '4 8');
+        aimPath.setAttribute('stroke-linecap', 'round');
+        const aimSolid = document.createElementNS(svgNS, 'line');
+        aimSolid.setAttribute('stroke-width', '6');
+        aimSolid.setAttribute('stroke-linecap', 'round');
+        aimSolid.setAttribute('stroke', '#77d995');
+        aimSvg.append(aimBounce, aimPath, aimSolid);
+        tableCloth.appendChild(aimSvg);
+
+        const powerEl = document.createElement('div');
+        powerEl.className = 'power-meter hidden';
+        powerEl.style.left = '50%';
+        powerEl.style.transform = 'translateX(-50%)';
+        powerEl.innerHTML = '<div class="power-label"><span>Power</span><strong>0%</strong></div><div class="power-bar"><div></div></div>';
+        tableCloth.appendChild(powerEl);
+
+        const cueBall = document.createElement('div');
+        cueBall.className = 'pool-ball';
+        cueBall.id = 'poolCueBall';
+        tableCloth.appendChild(cueBall);
+
+        tableShell.appendChild(tableCloth);
+        board.appendChild(tableShell);
+
+        const toast = document.createElement('div');
+        toast.className = 'pool-toast hidden';
+        toast.textContent = "Time's up!";
+        board.appendChild(toast);
+
+        p.cloth = tableCloth;
+        p.cueEl = cueBall;
+        p.aimSvg = aimSvg;
+        p.aimSolid = aimSolid;
+        p.aimPath = aimPath;
+        p.aimBounce = aimBounce;
+        p.powerEl = powerEl;
+        p.powerFill = powerEl.querySelector('.power-bar > div');
+        p.powerValue = powerEl.querySelector('strong');
+        p.toast = toast;
+        p.slotEls = [];
+
+        slots.forEach((option, index) => {
+          const answer = document.createElement('button');
+          answer.type = 'button';
+          answer.tabIndex = -1;
+          answer.setAttribute('aria-disabled', 'true');
+          answer.className = `option-btn answer-option slot-${POOL_SLOTS[index]}`;
+          const badge = document.createElement('span');
+          badge.className = 'slot-badge';
+          badge.textContent = POOL_LETTERS[index];
+          const label = document.createElement('span');
+          label.className = 'slot-text';
+          label.textContent = option.text;
+          answer.append(badge, label);
+          board.appendChild(answer);
+          p.slotEls.push({ el: answer, answerIndex: option.answerIndex });
+        });
+
+        if (measurePool()) {
+          p.cue.x = p.geo.W / 2;
+          p.cue.y = p.geo.H / 2;
+          p.cue.vx = 0;
+          p.cue.vy = 0;
+          placeCue();
+        }
+
+        tableCloth.addEventListener('pointerdown', (event) => {
+          if (token !== p.token || p.locked || p.rolling || p.sinking || p.dragging) return;
+          if (event.pointerType === 'mouse' && event.button !== 0) return;
+          event.preventDefault();
+          p.dragging = true;
+          p.dragPointerId = event.pointerId;
+          p.dragStart = poolPoint(event);
+          try { tableCloth.setPointerCapture(event.pointerId); } catch (e) { /* ignore */ }
+          updatePoolAim(0, 0);
+        });
+
+        tableCloth.addEventListener('pointermove', (event) => {
+          if (!p.dragging || event.pointerId !== p.dragPointerId || token !== p.token) return;
+          event.preventDefault();
+          const pt = poolPoint(event);
+          updatePoolAim(pt.x - p.dragStart.x, pt.y - p.dragStart.y);
+        });
+
+        const endDrag = (event, cancelled) => {
+          if (!p.dragging || event.pointerId !== p.dragPointerId) return;
+          p.dragging = false;
+          try { tableCloth.releasePointerCapture(event.pointerId); } catch (e) { /* ignore */ }
+          hidePoolAim();
+          if (cancelled || token !== p.token) return;
+          const pt = poolPoint(event);
+          shootPool(pt.x - p.dragStart.x, pt.y - p.dragStart.y);
+        };
+        tableCloth.addEventListener('pointerup', (event) => endDrag(event, false));
+        tableCloth.addEventListener('pointercancel', (event) => endDrag(event, true));
+
+        startPoolTimer();
+      }
+
+      function beginPoolGame() {
+        stopGolf();
+        stopPool();
+        const poolSet = poolQuestionSets[state.selectedPoolType] || poolQuestionSets.quick;
+        state.pool.questions = shuffle(poolSet);
+        state.pool.currentIndex = 0;
+        state.pool.score = 0;
+        state.pool.timeouts = 0;
+        resultOverlay.classList.remove('active');
+        showScreen('pool');
+        renderPoolBoard();
+      }
+
+      function finishPoolQuestion(selectedIndex, timedOut) {
+        const p = state.pool;
+        if (p.locked) return;
+        const question = p.questions[p.currentIndex];
+        if (!question) return;
+        p.locked = true;
+        p.token += 1;
+        p.rolling = false;
+        p.dragging = false;
+        stopPoolTimer();
+        hidePoolAim();
+        const token = p.token;
+
+        const slots = p.slotEls;
+        const markCorrect = () => {
+          slots.forEach((slot) => {
+            if (slot.answerIndex === question.correct) slot.el.classList.add('correct');
+          });
+        };
+
+        if (timedOut) {
+          p.timeouts += 1;
+          markCorrect();
+          p.toast.classList.remove('hidden');
+          p.cueEl.style.opacity = '0.5';
+        } else if (selectedIndex === question.correct) {
+          p.score += 1;
+          markCorrect();
+        } else {
+          slots.forEach((slot) => {
+            if (slot.answerIndex === selectedIndex) slot.el.classList.add('wrong');
+          });
+          markCorrect();
+        }
+
+        $('poolScore').textContent = String(p.score);
+        const delay = timedOut ? 1700 : (selectedIndex === question.correct ? 800 : 1500);
+
+        setTimeout(() => {
+          if (token !== p.token) return;
+          p.currentIndex += 1;
+          if (p.currentIndex >= p.questions.length) {
+            const total = p.questions.length;
+            const perfect = p.score === total;
+            let summary = `You answered ${p.score} out of ${total} questions correctly.`;
+            if (p.timeouts > 0) summary += ` ${p.timeouts} ran out of time.`;
+            stopPool();
+            openResult(perfect ? 'Perfect!' : 'Quiz complete', summary, perfect ? 'win' : 'lose', 'Main menu', 'Play again');
+            return;
+          }
+          renderPoolBoard();
+        }, delay);
+      }
+
+      /* ---------- tutorial ---------- */
+
+      const TUTORIAL = {
+        en: {
+          title: 'How to play',
+          close: 'Got it',
+          tip: 'Tip',
+          golf: {
+            intro: 'Answer picture questions to earn shots, then sink the ball in as few strokes as you can.',
+            steps: [
+              ['Name the fungus', 'A photo appears with four names. Pick the right one. A single wrong answer ends the round.'],
+              ['Earn your shot', 'Answer correctly and the question closes. The ball is yours to hit.'],
+              ['Pull back to aim', 'Press anywhere on the course and drag away from where you want the ball to go, like a slingshot. The ball flies the opposite way. The dashed line shows the path.'],
+              ['Drag farther for more power', 'A short drag is a gentle putt. The farther you drag, the faster the ball goes. The aim line turns from green to red as you pull farther.'],
+              ['Sink it', 'Get the ball into the hole to win. Fewer strokes and a faster time make a better round.']
+            ],
+            tip: 'On a phone, turn the screen sideways for a bigger course.'
+          },
+          pool: {
+            intro: 'Answer test questions by potting the cue ball into the pocket that holds the answer you choose.',
+            steps: [
+              ['Pick a set', 'Quick Practice, Challenge or True / False. You get one question at a time.'],
+              ['Read the pockets', 'Each answer sits next to a pocket, marked A to D. In True / False, True and False take the left and right pockets.'],
+              ['Drag toward a pocket', 'Press on the table and drag in the direction you want the ball to travel. The ball goes the same way you drag.'],
+              ['Drag farther for a harder shot', 'The dashed line shows the path, including a bounce off the cushion. A longer drag means more power. If the ball stops on the table, shoot again.'],
+              ['Beat the 25-second timer', 'You have 25 seconds per question. When time runs out the question counts as wrong and the right answer lights up.'],
+              ['Sink your answer', 'The pocket the ball drops into is your final answer. Each correct answer scores one point.']
+            ],
+            tip: 'You can press and drag anywhere on the table, not only on the ball.'
+          }
+        }
+      };
+
+      const tutorialState = {
+        mode: 'golf'
+      };
+
+      function golfDemoSvg(animated) {
+        const anim = (attr, values, keyTimes, extra = '') =>
+          animated ? `<animate attributeName="${attr}" values="${values}" keyTimes="${keyTimes}" dur="5s" repeatCount="indefinite" ${extra}/>` : '';
+        return `
+          <svg viewBox="0 0 320 150" role="img" aria-label="Golf: drag back from the ball, then it rolls to the hole">
+            <rect width="320" height="150" fill="#1b4632"/>
+            <rect x="150" y="8" width="16" height="62" rx="7" fill="#5a3b2c"/>
+            <rect x="200" y="120" width="16" height="22" rx="7" fill="#5a3b2c"/>
+            <circle cx="272" cy="100" r="13" fill="#050606" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+            <line x1="272" y1="100" x2="272" y2="76" stroke="#f7f1d4" stroke-width="2"/>
+            <rect x="272" y="76" width="14" height="9" fill="#e9d78d"/>
+            <line x1="60" y1="100" x2="196" y2="100" stroke="rgba(255,255,255,0.8)" stroke-width="3" stroke-dasharray="4 8" stroke-linecap="round" opacity="${animated ? 0 : 1}">
+              ${anim('opacity', '0;0;1;1;0;0', '0;0.08;0.3;0.5;0.52;1')}
+            </line>
+            <line x1="60" y1="100" x2="${animated ? 60 : 24}" y2="100" stroke="#e8c15a" stroke-width="5" stroke-linecap="round" opacity="${animated ? 0 : 1}">
+              ${anim('x2', '60;60;24;24;24', '0;0.08;0.4;0.52;1')}
+              ${anim('opacity', '0;1;1;0;0', '0;0.08;0.5;0.52;1')}
+            </line>
+            <circle cx="${animated ? 60 : 24}" cy="100" r="10" fill="rgba(255,255,255,0.28)" stroke="#fff" stroke-width="2" opacity="${animated ? 0 : 1}">
+              ${anim('cx', '60;60;24;24;24', '0;0.08;0.4;0.52;1')}
+              ${anim('opacity', '0;1;1;0;0', '0;0.08;0.5;0.52;1')}
+            </circle>
+            <circle cx="60" cy="100" r="8" fill="#eef1f4" stroke="rgba(0,0,0,0.35)" stroke-width="1.5">
+              ${anim('cx', '60;60;272;272', '0;0.52;0.8;1')}
+              ${anim('opacity', '1;1;0;0;1', '0;0.8;0.86;0.999;1')}
+            </circle>
+          </svg>`;
+      }
+
+      function poolDemoSvg(animated) {
+        const anim = (attr, values, keyTimes) =>
+          animated ? `<animate attributeName="${attr}" values="${values}" keyTimes="${keyTimes}" dur="5s" repeatCount="indefinite"/>` : '';
+        return `
+          <svg viewBox="0 0 320 170" role="img" aria-label="Pool: drag toward a pocket, the ball goes the same way">
+            <rect width="320" height="170" rx="14" fill="#a56c3a"/>
+            <rect x="10" y="10" width="300" height="150" rx="8" fill="#0d7a52"/>
+            <circle cx="24" cy="24" r="13" fill="#0a0e10" stroke="#4b7bf3" stroke-width="3"/>
+            <circle cx="296" cy="24" r="13" fill="#0a0e10" stroke="#d85d5d" stroke-width="3"/>
+            <circle cx="24" cy="146" r="13" fill="#0a0e10" stroke="#f1d663" stroke-width="3"/>
+            <circle cx="296" cy="146" r="13" fill="#0a0e10" stroke="#9a62da" stroke-width="3"/>
+            <text x="24" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#4b7bf3">A</text>
+            <text x="296" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#d85d5d">B</text>
+            <text x="24" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#f1d663">C</text>
+            <text x="296" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#9a62da">D</text>
+            <line x1="160" y1="85" x2="292" y2="27" stroke="rgba(255,255,255,0.85)" stroke-width="3" stroke-dasharray="4 8" stroke-linecap="round" opacity="${animated ? 0 : 1}">
+              ${anim('opacity', '0;0;1;1;0;0', '0;0.08;0.3;0.5;0.52;1')}
+            </line>
+            <line x1="160" y1="85" x2="${animated ? 160 : 204}" y2="${animated ? 85 : 66}" stroke="#e8c15a" stroke-width="5" stroke-linecap="round" opacity="${animated ? 0 : 1}">
+              ${anim('x2', '160;160;204;204;204', '0;0.08;0.4;0.52;1')}
+              ${anim('y2', '85;85;66;66;66', '0;0.08;0.4;0.52;1')}
+              ${anim('opacity', '0;1;1;0;0', '0;0.08;0.5;0.52;1')}
+            </line>
+            <circle cx="${animated ? 160 : 204}" cy="${animated ? 85 : 66}" r="10" fill="rgba(255,255,255,0.28)" stroke="#fff" stroke-width="2" opacity="${animated ? 0 : 1}">
+              ${anim('cx', '160;160;204;204;204', '0;0.08;0.4;0.52;1')}
+              ${anim('cy', '85;85;66;66;66', '0;0.08;0.4;0.52;1')}
+              ${anim('opacity', '0;1;1;0;0', '0;0.08;0.5;0.52;1')}
+            </circle>
+            <circle cx="160" cy="85" r="9" fill="#e9eeff" stroke="rgba(0,0,0,0.35)" stroke-width="1.5">
+              ${anim('cx', '160;160;296;296', '0;0.52;0.8;1')}
+              ${anim('cy', '85;85;24;24', '0;0.52;0.8;1')}
+              ${anim('opacity', '1;1;0;0;1', '0;0.8;0.86;0.999;1')}
+            </circle>
+          </svg>`;
+      }
+
+      function renderTutorial() {
+        const mode = tutorialState.mode;
+        const copy = TUTORIAL.en;
+        const block = copy[mode];
+        const animated = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+        $('tutTitle').textContent = copy.title;
+        $('tutClose').textContent = copy.close;
+        const steps = block.steps.map(([title, text]) => `<li><div><strong>${title}</strong><span>${text}</span></div></li>`).join('');
+        $('tutBody').innerHTML = `
+          <div class="tut-demo">${mode === 'golf' ? golfDemoSvg(animated) : poolDemoSvg(animated)}</div>
+          <p class="tut-intro">${block.intro}</p>
+          <ol class="tut-steps">${steps}</ol>
+          <p class="tut-tip"><strong>${copy.tip}:</strong> ${block.tip}</p>
+        `;
+      }
+
+      function openTutorial(mode) {
+        tutorialState.mode = mode;
+        renderTutorial();
+        $('tutorialOverlay').classList.add('active');
+        $('tutClose').focus();
+      }
+
+      function closeTutorial() {
+        $('tutorialOverlay').classList.remove('active');
+      }
+
+      $('tutClose').addEventListener('click', closeTutorial);
+      $('tutorialOverlay').addEventListener('click', (event) => {
+        if (event.target === $('tutorialOverlay')) closeTutorial();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeTutorial();
+      });
+
+      document.querySelectorAll('[data-tutorial]').forEach((button) => {
+        button.addEventListener('click', (event) => {
+          event.stopPropagation();
+          openTutorial(button.dataset.tutorial);
+        });
+      });
+
+      /* ---------- menu wiring ---------- */
+
+      document.querySelectorAll('[data-mode]').forEach((card) => {
+        card.addEventListener('click', () => {
+          state.currentMode = card.dataset.mode;
+          if (state.currentMode === 'golf') {
+            showScreen('difficulty');
+          } else {
+            showScreen('poolType');
+          }
+        });
+      });
+
+      document.querySelectorAll('[data-back]').forEach((button) => {
+        button.addEventListener('click', () => showScreen('main'));
+      });
+
+      document.querySelectorAll('[data-difficulty]').forEach((button) => {
+        button.addEventListener('click', () => {
+          setDifficulty(button.dataset.difficulty);
+          showScreen('language');
+        });
+      });
+
+      document.querySelectorAll('[data-language]').forEach((button) => {
+        button.addEventListener('click', () => {
+          state.language = button.dataset.language;
+          if (state.currentMode === 'golf') beginGolfGame();
+        });
+      });
+
+      document.querySelectorAll('[data-pooltype]').forEach((button) => {
+        button.addEventListener('click', () => {
+          state.selectedPoolType = button.dataset.pooltype;
+          beginPoolGame();
+        });
+      });
+
+      $('golfMainMenuBtn').addEventListener('click', () => {
+        stopGolf();
+        showScreen('main');
+      });
+
+      $('poolMainMenuBtn').addEventListener('click', () => {
+        stopPool();
+        resultOverlay.classList.remove('active');
+        showScreen('main');
+      });
+
+      $('mainMenuBtn').addEventListener('click', () => {
+        stopGolf();
+        stopPool();
+        resultOverlay.classList.remove('active');
+        showScreen('main');
+      });
+
+      $('restartBtn').addEventListener('click', () => {
+        resultOverlay.classList.remove('active');
+        if (state.currentMode === 'golf') {
+          beginGolfGame();
+        } else {
+          beginPoolGame();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if ($('golfScreen').classList.contains('active')) relayoutGolf();
+        if ($('poolScreen').classList.contains('active')) relayoutPool();
+      });
+
+      showScreen('main');
+    </script>
+  </body>
+</html>
