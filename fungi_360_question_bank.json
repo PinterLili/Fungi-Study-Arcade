@@ -1,0 +1,3638 @@
+{
+  "Quick Practice": [
+    {
+      "q": "Which characteristic distinguishes fungi from plants most clearly?",
+      "options": [
+        "They have cell walls",
+        "They are eukaryotic",
+        "They obtain organic nutrients rather than photosynthesizing",
+        "They can reproduce sexually"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "What is the main structural polysaccharide in most fungal cell walls?",
+      "options": [
+        "Cellulose",
+        "Chitin",
+        "Glycogen",
+        "Peptidoglycan"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What is the main nutritional mode of fungi?",
+      "options": [
+        "Photosynthesis",
+        "Chemosynthesis",
+        "Absorptive heterotrophy",
+        "Phagocytosis"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "What is a hypha?",
+      "options": [
+        "A fungal spore",
+        "A microscopic fungal filament",
+        "A reproductive organ",
+        "A type of mushroom cap"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "A mass of interconnected fungal hyphae is called a:",
+      "options": [
+        "Basidium",
+        "Mycelium",
+        "Sporangium",
+        "Ascocarp"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which substance is commonly stored as a reserve carbohydrate by fungi?",
+      "options": [
+        "Starch",
+        "Cellulose",
+        "Glycogen",
+        "Sucrose"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "Which of these is NOT a typical fungal nutritional strategy?",
+      "options": [
+        "Decomposition",
+        "Parasitism",
+        "Mutualism",
+        "Photosynthesis"
+      ],
+      "answer": "D"
+    },
+    {
+      "q": "Which group is evolutionarily more closely related to fungi?",
+      "options": [
+        "Plants",
+        "Animals",
+        "Bacteria",
+        "Cyanobacteria"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Why can fungi digest food outside their cells?",
+      "options": [
+        "They have chloroplasts",
+        "They release digestive enzymes into their surroundings",
+        "Their cell walls digest food",
+        "They engulf food with pseudopodia"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which of the following can be a fungal lifestyle?",
+      "options": [
+        "Saprotrophic",
+        "Parasitic",
+        "Mutualistic",
+        "All of the above"
+      ],
+      "answer": "D"
+    },
+    {
+      "q": "*Mucor* is commonly associated with:",
+      "options": [
+        "Bread mold",
+        "Blue cheese",
+        "Rust disease",
+        "Powdery mildew"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "*Mucor* belongs to the group traditionally called:",
+      "options": [
+        "Basidiomycetes",
+        "Zygomycetes / zygomycete-like fungi",
+        "Yeasts",
+        "Lichens"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What reproductive structure produces spores in *Mucor*?",
+      "options": [
+        "Basidium",
+        "Ascocarp",
+        "Sporangium",
+        "Gills"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "The spores produced inside a *Mucor* sporangium are called:",
+      "options": [
+        "Basidiospores",
+        "Ascospores",
+        "Sporangiospores",
+        "Conidia"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "What is characteristic of sexual reproduction in *Mucor*?",
+      "options": [
+        "Formation of a basidium",
+        "Formation of a zygospore",
+        "Formation of a mushroom",
+        "Formation of a yeast bud"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Why can mold spread rapidly across food?",
+      "options": [
+        "It produces chlorophyll",
+        "Its mycelium can grow through the substrate",
+        "It actively hunts bacteria",
+        "It produces roots"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What is the defining reproductive structure of ascomycetes?",
+      "options": [
+        "Basidium",
+        "AscUS",
+        "Sporangium",
+        "Rhizoid"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What type of spores are produced in an ascus?",
+      "options": [
+        "Basidiospores",
+        "Zygospores",
+        "Ascospores",
+        "Sporangiospores"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "What is the defining reproductive structure of basidiomycetes?",
+      "options": [
+        "Ascus",
+        "Basidium",
+        "Sporangium",
+        "Conidiophore"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What type of spores are produced on a basidium?",
+      "options": [
+        "Ascospores",
+        "Basidiospores",
+        "Zygospores",
+        "Sporangiospores"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which group includes many familiar mushroom-forming species?",
+      "options": [
+        "Basidiomycetes",
+        "Yeasts only",
+        "Mucorales",
+        "Bacteria"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which of these is an ascomycete?",
+      "options": [
+        "*Penicillium*",
+        "*Amanita*",
+        "*Boletus*",
+        "*Cantharellus*"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which of these is a basidiomycete?",
+      "options": [
+        "*Saccharomyces*",
+        "*Penicillium*",
+        "*Amanita*",
+        "*Aspergillus*"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "What is a mushroom's visible fruiting body primarily associated with?",
+      "options": [
+        "Photosynthesis",
+        "Spore production and dispersal",
+        "Water absorption",
+        "Nitrogen fixation"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which statement about fungal fruiting bodies is correct?",
+      "options": [
+        "Every fungus produces one",
+        "Only parasitic fungi produce them",
+        "They are reproductive structures in many fungi",
+        "They are equivalent to plant roots"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "Which species is the classic baker's yeast?",
+      "options": [
+        "*Saccharomyces cerevisiae*",
+        "*Aspergillus niger*",
+        "*Penicillium roquefortii*",
+        "*Botrytis cinerea*"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "How does *Saccharomyces cerevisiae* commonly reproduce asexually?",
+      "options": [
+        "Binary fission",
+        "Budding",
+        "Fragmentation into spores only",
+        "Formation of basidia"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which yeast reproduces characteristically by fission?",
+      "options": [
+        "*Saccharomyces cerevisiae*",
+        "*Schizosaccharomyces pombe*",
+        "*Penicillium chrysogenum*",
+        "*Mucor*"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What happens during budding?",
+      "options": [
+        "The cell divides into two equal halves",
+        "A smaller daughter cell develops from the parent cell",
+        "The cell forms a mushroom",
+        "The nucleus disappears"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What happens during fission?",
+      "options": [
+        "A new cell develops as a bud",
+        "The parent cell divides into daughter cells",
+        "Spores are released from a basidium",
+        "Two hyphae fuse"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which organism is especially important in alcoholic fermentation?",
+      "options": [
+        "*Saccharomyces cerevisiae*",
+        "*Amanita muscaria*",
+        "*Botrytis cinerea*",
+        "*Claviceps purpurea*"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What are the main products of alcoholic fermentation of glucose?",
+      "options": [
+        "Oxygen and water",
+        "Ethanol and carbon dioxide",
+        "Lactic acid and oxygen",
+        "Methane and water"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which equation represents alcoholic fermentation?",
+      "options": [
+        "Glucose → oxygen + water",
+        "Glucose → ethanol + CO₂",
+        "Ethanol → glucose + oxygen",
+        "CO₂ → glucose + ethanol"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which gas causes bread dough to rise?",
+      "options": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon dioxide",
+        "Hydrogen"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "Which industry relies directly on alcoholic fermentation?",
+      "options": [
+        "Brewing",
+        "Glass production",
+        "Steel production",
+        "Cement production"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which is another application of alcoholic fermentation?",
+      "options": [
+        "Bread making",
+        "Paper recycling",
+        "Metal refining",
+        "Plastic molding"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which product of fermentation is important in winemaking?",
+      "options": [
+        "Methanol",
+        "Ethanol",
+        "Lactic acid",
+        "Acetic acid"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which combination consists entirely of applications of alcoholic fermentation?",
+      "options": [
+        "Bread, beer, wine",
+        "Cheese, paper, steel",
+        "Yogurt, vinegar, cement",
+        "Chocolate, glass, soap"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why does fermentation become important to yeast when oxygen is limited?",
+      "options": [
+        "It allows regeneration of NAD⁺ and continued glycolysis",
+        "It produces chlorophyll",
+        "It creates oxygen",
+        "It directly produces starch"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which molecule is fermented by yeast?",
+      "options": [
+        "Glucose",
+        "Cellulose only",
+        "DNA",
+        "Chitin"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which species is the most important human pathogen among the *Candida* species listed?",
+      "options": [
+        "*Candida albicans*",
+        "*Candida cerevisiae*",
+        "*Candida niger*",
+        "*Candida penicillium*"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Candidiasis is:",
+      "options": [
+        "A bacterial infection",
+        "A fungal infection",
+        "A viral infection",
+        "A parasitic worm infection"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What does gastrointestinal candidiasis involve?",
+      "options": [
+        "Infection involving the gastrointestinal tract",
+        "Infection of bones only",
+        "Infection of the lungs only",
+        "Infection of plant roots"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "*Candida albicans* can normally exist as:",
+      "options": [
+        "Part of the human microbiota",
+        "A plant pathogen only",
+        "A bacterium",
+        "A virus"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A microorganism that normally causes little harm but can cause disease when host conditions change is called:",
+      "options": [
+        "An autotroph",
+        "An opportunistic pathogen",
+        "A decomposer",
+        "A primary producer"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Who discovered penicillin's antibacterial effect?",
+      "options": [
+        "Louis Pasteur",
+        "Alexander Fleming",
+        "Robert Koch",
+        "Ernst Chain"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What organism was responsible for Fleming's famous observation?",
+      "options": [
+        "*Saccharomyces*",
+        "*Penicillium*",
+        "*Mucor*",
+        "*Aspergillus*"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What did Fleming observe around the *Penicillium* colony?",
+      "options": [
+        "Faster bacterial growth",
+        "A zone where bacteria did not grow",
+        "Photosynthesis",
+        "Formation of mushrooms"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Who were particularly important in developing penicillin into a practical treatment?",
+      "options": [
+        "Florey and Chain",
+        "Darwin and Wallace",
+        "Watson and Crick",
+        "Pasteur and Koch"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Penicillin primarily targets:",
+      "options": [
+        "Viral capsids",
+        "Bacterial cell-wall synthesis",
+        "Fungal chloroplasts",
+        "Human mitochondria"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Why does penicillin not normally treat influenza?",
+      "options": [
+        "Influenza is caused by a fungus",
+        "Influenza is caused by a virus",
+        "Influenza has a chitinous cell wall",
+        "Influenza is caused by yeast"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Antibiotic resistance means that:",
+      "options": [
+        "Antibiotics become viruses",
+        "Bacteria can survive exposure to an antibiotic that would normally inhibit them",
+        "Humans become resistant to all medicines",
+        "Fungi stop reproducing"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which process can contribute to antibiotic resistance?",
+      "options": [
+        "Natural selection",
+        "Photosynthesis",
+        "Fermentation only",
+        "Osmosis only"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which practice can contribute to antibiotic resistance?",
+      "options": [
+        "Appropriate use of antibiotics",
+        "Unnecessary antibiotic use",
+        "Washing hands",
+        "Vaccination"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which species is historically associated with Fleming's original penicillin observation?",
+      "options": [
+        "*P. notatum*",
+        "*P. roquefortii*",
+        "*P. camemberti*",
+        "*P. niger*"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which *Penicillium* species is strongly associated with industrial penicillin production?",
+      "options": [
+        "*P. chrysogenum*",
+        "*P. roquefortii*",
+        "*P. notatum*",
+        "*P. mucor*"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which *Penicillium* species is associated with blue cheeses?",
+      "options": [
+        "*P. chrysogenum*",
+        "*P. roquefortii*",
+        "*P. notatum*",
+        "*P. albicans*"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Why is the name *Penicillium* particularly appropriate?",
+      "options": [
+        "Its spores form structures resembling a brush",
+        "It has a mushroom-shaped cap",
+        "It grows only on pens",
+        "It has needle-shaped roots"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which fungus causes grey mold?",
+      "options": [
+        "*Botrytis cinerea*",
+        "*Aspergillus niger*",
+        "*Claviceps purpurea*",
+        "*Penicillium chrysogenum*"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What is a beneficial application of *Botrytis cinerea* under certain conditions?",
+      "options": [
+        "Noble rot in winemaking",
+        "Bread fermentation",
+        "Penicillin production",
+        "Citric acid production"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which famous Hungarian wine is associated with noble rot?",
+      "options": [
+        "Tokaji Aszú",
+        "Egri Bikavér",
+        "Villányi Portugieser",
+        "Somlói Juhfark"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What happens to grapes affected by noble rot?",
+      "options": [
+        "They become more watery",
+        "They lose water and become concentrated",
+        "They stop containing sugars",
+        "They become photosynthetic"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which fungus is widely used for industrial citric acid production?",
+      "options": [
+        "*Aspergillus niger*",
+        "*Botrytis cinerea*",
+        "*Penicillium notatum*",
+        "*Mucor*"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Citric acid is widely used in:",
+      "options": [
+        "Food and beverage production",
+        "Steel production only",
+        "Textile weaving only",
+        "Computer manufacturing"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which disease can be caused by *Aspergillus* species?",
+      "options": [
+        "Aspergillosis",
+        "Candidiasis",
+        "Moniliosis",
+        "Ergotism"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "How are *Aspergillus* spores commonly acquired by humans?",
+      "options": [
+        "Inhalation",
+        "Photosynthesis",
+        "Injection by plant roots",
+        "Drinking seawater"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which people are particularly susceptible to invasive aspergillosis?",
+      "options": [
+        "People with severely weakened immune systems",
+        "Only professional athletes",
+        "Only infants",
+        "Only people with plant allergies"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which type of medicine is used against aspergillosis?",
+      "options": [
+        "Antifungal medication",
+        "Antibiotics exclusively",
+        "Antivirals exclusively",
+        "Antacids"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Moniliosis is especially associated with:",
+      "options": [
+        "Fruit trees",
+        "Conifers only",
+        "Mosses only",
+        "Algae"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which is a common symptom of moniliosis?",
+      "options": [
+        "Fruit rot",
+        "Blue leaves",
+        "Root photosynthesis",
+        "Increased fruit firmness"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What is a characteristic symptom of powdery mildew?",
+      "options": [
+        "A white, powder-like coating",
+        "Black mushroom caps",
+        "Blue roots",
+        "Complete absence of leaves"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Powdery mildew primarily affects:",
+      "options": [
+        "Above-ground plant tissues",
+        "Only seeds",
+        "Only roots",
+        "Only flowers after pollination"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which fungus causes ergot disease?",
+      "options": [
+        "*Claviceps purpurea*",
+        "*Botrytis cinerea*",
+        "*Aspergillus niger*",
+        "*Penicillium roquefortii*"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Ergot commonly affects:",
+      "options": [
+        "Grasses and cereals",
+        "Mushrooms",
+        "Ferns only",
+        "Marine algae"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What are ergot alkaloids?",
+      "options": [
+        "Biologically active compounds produced by ergot fungi",
+        "Plant cell-wall polysaccharides",
+        "Bacterial proteins",
+        "Fungal cell-wall sugars"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why is ergot contamination dangerous?",
+      "options": [
+        "It can lead to poisoning",
+        "It increases vitamin content",
+        "It makes grain sterile but harmless",
+        "It converts starch into cellulose"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Mycorrhiza is a relationship between:",
+      "options": [
+        "A fungus and a plant root",
+        "Two bacteria",
+        "Two fungi only",
+        "A fungus and an animal's blood"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What does the plant typically provide to the fungus?",
+      "options": [
+        "Organic carbon compounds",
+        "Oxygen only",
+        "Chitin",
+        "Penicillin"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What can the fungus provide to the plant?",
+      "options": [
+        "Improved access to water and minerals",
+        "Chloroplasts",
+        "Nitrogen gas directly",
+        "Cellulose"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What does ectomycorrhiza mainly form around?",
+      "options": [
+        "The outside of plant roots",
+        "The inside of chloroplasts",
+        "The stem's vascular tissue only",
+        "The plant's flowers"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Endomycorrhiza involves:",
+      "options": [
+        "A closer association with the inside of root cells",
+        "Only the outside of leaves",
+        "No fungal contact with roots",
+        "A relationship with animal cells"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why is mycorrhiza considered mutualistic?",
+      "options": [
+        "Both organisms receive benefits",
+        "Only the fungus benefits",
+        "Only the plant benefits",
+        "Neither organism benefits"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What is the stalk of a typical mushroom called?",
+      "options": [
+        "Pileus",
+        "Stipe",
+        "Basidium",
+        "AscUS"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What is the cap of a typical mushroom called?",
+      "options": [
+        "Pileus",
+        "Stipe",
+        "Velum",
+        "Rhizoid"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What is a ring around the stalk called?",
+      "options": [
+        "Volva",
+        "Annulus",
+        "Gill",
+        "Scale"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What is the cup-like structure at the base of some mushrooms called?",
+      "options": [
+        "Annulus",
+        "Volva",
+        "Pileus",
+        "Basidium"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What is the general veil that covers an immature mushroom called?",
+      "options": [
+        "Velum generale",
+        "Velum partiale",
+        "Basidium",
+        "Annulus"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What is the partial veil?",
+      "options": [
+        "A structure covering the entire young mushroom",
+        "A membrane protecting the developing hymenium",
+        "A root-like structure",
+        "A spore"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "What are scales/spots on a mushroom cap sometimes remnants of?",
+      "options": [
+        "Velum generale",
+        "Basidia",
+        "Hyphae only",
+        "Roots"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which mushroom is famous for having white spots on its cap?",
+      "options": [
+        "*Amanita muscaria*",
+        "*Boletus edulis*",
+        "*Cantharellus cibarius*",
+        "*Phallus impudicus*"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What organism causes downy mildew of grapevine?",
+      "options": [
+        "Botrytis cinerea",
+        "Plasmopara viticola",
+        "Aspergillus niger",
+        "Penicillium chrysogenum"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Plasmopara viticola primarily infects which plant?",
+      "options": [
+        "Grapevine",
+        "Wheat",
+        "Rye",
+        "Apple tree"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What type of relationship does Plasmopara viticola have with grapevine?",
+      "options": [
+        "Mutualism",
+        "Parasitism",
+        "Commensalism",
+        "Decomposition"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What best describes parasitism in a Plasmopara–grapevine interaction?",
+      "options": [
+        "Both partners benefit",
+        "The pathogen gains nutrients while harming the host",
+        "The host gains minerals",
+        "The pathogen feeds only on dead tissue"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which tissue is exploited during a typical Plasmopara infection?",
+      "options": [
+        "Living plant tissue",
+        "Dead wood only",
+        "Soil particles",
+        "Seeds only"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which statement about downy mildew is most accurate?",
+      "options": [
+        "It is a viral disease",
+        "It is caused by a fungus-like oomycete",
+        "It is caused by a bacterium",
+        "It is a yeast infection"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Why is Plasmopara viticola notable when studying fungi?",
+      "options": [
+        "It is a basidiomycete",
+        "It belongs to the oomycetes rather than true fungi",
+        "It is a yeast",
+        "It forms lichens"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which combination best describes typical fungi?",
+      "options": [
+        "Eukaryotic, heterotrophic, absorptive nutrition",
+        "Prokaryotic, autotrophic",
+        "Eukaryotic, photosynthetic",
+        "Prokaryotic, photosynthetic"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which substance is characteristic of fungal cell walls?",
+      "options": [
+        "Peptidoglycan",
+        "Chitin",
+        "Lignin",
+        "Starch"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which carbohydrate is commonly stored by fungi?",
+      "options": [
+        "Starch",
+        "Glycogen",
+        "Cellulose",
+        "Sucrose"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "How do fungi generally obtain nutrients?",
+      "options": [
+        "By photosynthesis",
+        "By absorbing products of extracellular digestion",
+        "By swallowing food",
+        "By filtering sunlight"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What is the main body of many filamentous fungi called?",
+      "options": [
+        "Mycelium",
+        "Pileus",
+        "Basidium",
+        "Sporangium"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "A mycelium is made mainly of:",
+      "options": [
+        "Spores",
+        "Hyphae",
+        "Basidia",
+        "Asci"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which statement correctly compares fungi and plants?",
+      "options": [
+        "Both photosynthesize",
+        "Fungal walls contain chitin while plant walls mainly contain cellulose",
+        "Plants store glycogen",
+        "Fungi have chloroplasts"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which statement correctly compares fungi and animals?",
+      "options": [
+        "Both have chitinous cell walls",
+        "Both are generally heterotrophic and store glycogen",
+        "Both photosynthesize",
+        "Both are prokaryotic"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What feature do fungi generally have that animals lack?",
+      "options": [
+        "DNA",
+        "Eukaryotic cells",
+        "Cell walls",
+        "Heterotrophic nutrition"
+      ],
+      "answer": "C",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What feature distinguishes fungi from plants most directly?",
+      "options": [
+        "They are eukaryotic",
+        "They contain DNA",
+        "They generally lack chlorophyll and obtain organic nutrients",
+        "They have cells"
+      ],
+      "answer": "C",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Mucor is commonly known as:",
+      "options": [
+        "Bread mold",
+        "Blue mold",
+        "Grey mold",
+        "Powdery mildew"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which structure is characteristic of asexual reproduction in Mucor?",
+      "options": [
+        "Basidium",
+        "Ascus",
+        "Sporangium",
+        "Pileus"
+      ],
+      "answer": "C",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Where are Mucor's asexual spores formed?",
+      "options": [
+        "Inside a sporangium",
+        "Inside a basidium",
+        "On mushroom gills",
+        "Inside an ascus"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What sexual structure is associated with traditional zygomycete classification?",
+      "options": [
+        "Zygospore",
+        "Basidiospore",
+        "Ascospore",
+        "Conidium"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Why can Mucor spread across food efficiently?",
+      "options": [
+        "Its mycelium grows through the substrate",
+        "It has roots",
+        "It photosynthesizes",
+        "It hunts insects"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which observation best fits Mucor?",
+      "options": [
+        "Sporangia at the ends of specialized hyphae",
+        "Mushroom caps with gills",
+        "Basidia in a cap",
+        "Yeast buds only"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What is the characteristic sexual structure of ascomycetes?",
+      "options": [
+        "Basidium",
+        "Ascus",
+        "Sporangium",
+        "Volva"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What is produced in an ascus?",
+      "options": [
+        "Basidiospores",
+        "Ascospores",
+        "Zygospores",
+        "Sporangiospores"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What is the characteristic sexual structure of basidiomycetes?",
+      "options": [
+        "Ascus",
+        "Basidium",
+        "Sporangium",
+        "Volva"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What is produced on a basidium?",
+      "options": [
+        "Ascospores",
+        "Basidiospores",
+        "Zygospores",
+        "Sporangiospores"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which group contains many familiar cap-and-stem mushrooms?",
+      "options": [
+        "Basidiomycetes",
+        "Yeasts",
+        "Mucorales",
+        "Oomycetes"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which is an ascomycete?",
+      "options": [
+        "Penicillium",
+        "Amanita",
+        "Boletus",
+        "Cantharellus"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which is a basidiomycete?",
+      "options": [
+        "Saccharomyces",
+        "Aspergillus",
+        "Amanita",
+        "Penicillium"
+      ],
+      "answer": "C",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "A fungus produces sexual spores inside sac-like cells. Which group is indicated?",
+      "options": [
+        "Ascomycetes",
+        "Basidiomycetes",
+        "Mucorales",
+        "Oomycetes"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "A fungus produces sexual spores externally on club-shaped cells. Which group is indicated?",
+      "options": [
+        "Ascomycetes",
+        "Basidiomycetes",
+        "Mucorales",
+        "Yeasts"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which yeast is widely used in baking and alcoholic fermentation?",
+      "options": [
+        "Saccharomyces cerevisiae",
+        "Schizosaccharomyces pombe",
+        "Botrytis cinerea",
+        "Aspergillus niger"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "How does Saccharomyces cerevisiae commonly reproduce asexually?",
+      "options": [
+        "Budding",
+        "Fission",
+        "Basidiospore formation",
+        "Zygospore formation"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "How does Schizosaccharomyces pombe characteristically reproduce asexually?",
+      "options": [
+        "Budding",
+        "Fission",
+        "Fragmentation of a mushroom",
+        "Ascus formation"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What is the key difference between budding and fission?",
+      "options": [
+        "Budding forms an outgrowth; fission divides the cell",
+        "Budding is sexual; fission is always sexual",
+        "Fission occurs only in fungi",
+        "There is no difference"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which equation represents alcoholic fermentation?",
+      "options": [
+        "Glucose → ethanol + carbon dioxide",
+        "Glucose + oxygen → ethanol",
+        "Ethanol → glucose + oxygen",
+        "Carbon dioxide → glucose + ethanol"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which products are formed in alcoholic fermentation?",
+      "options": [
+        "Ethanol and carbon dioxide",
+        "Water and oxygen",
+        "Glucose and water",
+        "Lactic acid and oxygen"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which gas produced during fermentation makes bread rise?",
+      "options": [
+        "Oxygen",
+        "Nitrogen",
+        "Carbon dioxide",
+        "Hydrogen"
+      ],
+      "answer": "C",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which is NOT a typical application of yeast fermentation?",
+      "options": [
+        "Bread production",
+        "Beer production",
+        "Wine production",
+        "Penicillin production"
+      ],
+      "answer": "D",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which combination contains only yeast-fermentation applications?",
+      "options": [
+        "Bread, beer, wine",
+        "Penicillin, cheese, citric acid",
+        "Tokaji Aszú, ergot, aspergillosis",
+        "Mycorrhiza, mildew, bread"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Why is carbon dioxide important in bread-making?",
+      "options": [
+        "It forms gas bubbles that expand the dough",
+        "It provides glucose",
+        "It prevents fermentation",
+        "It makes yeast photosynthetic"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which process allows yeast to produce ethanol when oxygen is limited?",
+      "options": [
+        "Photosynthesis",
+        "Alcoholic fermentation",
+        "Nitrogen fixation",
+        "Aerobic respiration only"
+      ],
+      "answer": "B",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which Candida species is an important human pathogen?",
+      "options": [
+        "Candida albicans",
+        "Candida niger",
+        "Candida roquefortii",
+        "Candida pombe"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Candidiasis is caused by:",
+      "options": [
+        "Fungi",
+        "Bacteria",
+        "Viruses",
+        "Protozoa"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What does gastrointestinal candidiasis affect?",
+      "options": [
+        "The gastrointestinal tract",
+        "The respiratory tract only",
+        "Plant roots",
+        "Bones only"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Why can Candida albicans be called an opportunistic pathogen?",
+      "options": [
+        "It can normally occur in the body but cause disease when conditions favor overgrowth or invasion",
+        "It only infects plants",
+        "It is always pathogenic",
+        "It cannot live in healthy people"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which situation can increase the risk of candidiasis?",
+      "options": [
+        "Disruption of normal microbial balance",
+        "Increased photosynthesis",
+        "Mycorrhiza formation",
+        "Increased plant growth"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Who first observed the antibacterial effect that led to penicillin's discovery?",
+      "options": [
+        "Alexander Fleming",
+        "Louis Pasteur",
+        "Ernst Boris Chain",
+        "Howard Florey"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What did Fleming observe around a Penicillium colony?",
+      "options": [
+        "Bacteria were inhibited",
+        "Bacteria grew faster",
+        "Fungi became bacteria",
+        "The fungus stopped growing"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What was especially important about Chain and Florey's work?",
+      "options": [
+        "They helped isolate, test, and develop penicillin as a useful drug",
+        "They discovered yeast",
+        "They discovered mycorrhiza",
+        "They discovered Botrytis"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What was necessary for penicillin to become widely useful?",
+      "options": [
+        "Isolation, purification, testing, and large-scale production",
+        "Conversion into ethanol",
+        "Combining it with chlorophyll",
+        "Turning it into a plant hormone"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Penicillin primarily interferes with:",
+      "options": [
+        "Bacterial cell-wall synthesis",
+        "Viral capsids",
+        "Fungal photosynthesis",
+        "Human red blood cells"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Why can penicillin selectively affect bacteria?",
+      "options": [
+        "Humans do not have bacterial peptidoglycan cell walls",
+        "Humans have chloroplasts",
+        "Human cells lack DNA",
+        "Penicillin only enters plants"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which sequence best summarizes penicillin's development?",
+      "options": [
+        "Fleming's observation → isolation/testing → large-scale production",
+        "Large-scale production → Fleming's observation",
+        "Florey's discovery → invention of fungi",
+        "Chain's discovery → bacterial discovery"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What is an antibiotic?",
+      "options": [
+        "A substance that can inhibit or kill susceptible bacteria",
+        "A substance that kills all organisms",
+        "A type of virus",
+        "A fungal reproductive structure"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which statement about antibiotics is correct?",
+      "options": [
+        "They are primarily used against bacterial infections",
+        "They work against all viruses",
+        "They only work against fungi",
+        "They are bacterial nutrients"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What does antibiotic resistance mean?",
+      "options": [
+        "Bacteria can survive an antibiotic that would normally inhibit or kill them",
+        "Humans become resistant to all medicines",
+        "Antibiotics stop being produced",
+        "Fungi become plants"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Why can antibiotic use select for resistant bacteria?",
+      "options": [
+        "Resistant bacteria survive and reproduce",
+        "Antibiotics teach every bacterium resistance",
+        "Antibiotics make all bacteria identical",
+        "Antibiotics increase photosynthesis"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which behavior can contribute to antibiotic resistance?",
+      "options": [
+        "Unnecessary use of antibiotics",
+        "Vaccination",
+        "Handwashing",
+        "Appropriate prescribed use"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which mechanism can make a bacterium resistant?",
+      "options": [
+        "Producing an enzyme that inactivates the antibiotic",
+        "Producing chlorophyll",
+        "Alcoholic fermentation",
+        "Forming a mushroom cap"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Why are antibiotics generally ineffective against viruses?",
+      "options": [
+        "Viruses lack the bacterial structures targeted by many antibiotics",
+        "Viruses are too large",
+        "Viruses have chitin walls",
+        "Viruses are fungi"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which Penicillium species is associated with Fleming's original discovery?",
+      "options": [
+        "Penicillium notatum",
+        "Penicillium roquefortii",
+        "Penicillium chrysogenum",
+        "Penicillium niger"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which species is strongly associated with industrial penicillin production?",
+      "options": [
+        "Penicillium chrysogenum",
+        "Penicillium roquefortii",
+        "Penicillium notatum",
+        "Penicillium albicans"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which species is associated with blue cheese?",
+      "options": [
+        "Penicillium roquefortii",
+        "Penicillium chrysogenum",
+        "Penicillium notatum",
+        "Penicillium niger"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which pairing is incorrect?",
+      "options": [
+        "P. notatum — penicillin discovery",
+        "P. chrysogenum — industrial penicillin",
+        "P. roquefortii — blue cheese",
+        "P. chrysogenum — Tokaji Aszú"
+      ],
+      "answer": "D",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which fungus causes grey mold?",
+      "options": [
+        "Botrytis cinerea",
+        "Aspergillus niger",
+        "Claviceps purpurea",
+        "Penicillium notatum"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What is unusual about Botrytis cinerea's economic importance?",
+      "options": [
+        "It can cause destructive grey mold but also beneficial noble rot",
+        "It produces penicillin",
+        "It produces citric acid",
+        "It performs alcoholic fermentation"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Noble rot is important in the production of:",
+      "options": [
+        "Tokaji Aszú",
+        "Beer",
+        "Blue cheese",
+        "Bread"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "How can noble rot contribute to sweet wine production?",
+      "options": [
+        "It can cause water loss and concentrate sugars and other compounds in grapes",
+        "It removes all sugars",
+        "It converts grapes directly into ethanol",
+        "It prevents maturation"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which statement best distinguishes noble rot from ordinary grey mold?",
+      "options": [
+        "Under suitable conditions, it can have desirable effects",
+        "It is caused by bacteria",
+        "It never involves Botrytis",
+        "It occurs only on wheat"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which fungus is used industrially to produce citric acid?",
+      "options": [
+        "Aspergillus niger",
+        "Botrytis cinerea",
+        "Penicillium notatum",
+        "Claviceps purpurea"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Why is microbial citric acid production useful?",
+      "options": [
+        "Large amounts can be produced under controlled conditions",
+        "Fungi produce unlimited oxygen",
+        "It eliminates carbohydrates",
+        "Citric acid cannot occur naturally"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which pairing is correct?",
+      "options": [
+        "Aspergillus niger — citric acid",
+        "Botrytis cinerea — penicillin",
+        "Claviceps purpurea — ethanol",
+        "Saccharomyces cerevisiae — citric acid as its main product"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Aspergillosis is caused by:",
+      "options": [
+        "Aspergillus species",
+        "Candida species only",
+        "Penicillium species only",
+        "Saccharomyces species"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "How do Aspergillus spores commonly enter the human body?",
+      "options": [
+        "By inhalation",
+        "By photosynthesis",
+        "Through plant roots",
+        "Through fungal gills"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Who is at greater risk of severe invasive aspergillosis?",
+      "options": [
+        "A severely immunocompromised person",
+        "A healthy plant",
+        "A person with no spore exposure",
+        "A mushroom"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which type of medication may treat aspergillosis?",
+      "options": [
+        "Antifungal medication",
+        "Antibiotics only",
+        "Antivirals only",
+        "Antihistamines only"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Why can invasive aspergillosis be dangerous in immunocompromised patients?",
+      "options": [
+        "The immune system may be unable to control fungal growth",
+        "The fungus becomes a bacterium",
+        "The fungus begins photosynthesis",
+        "Human cells develop chitin walls"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Moniliosis is associated with:",
+      "options": [
+        "Monilinia fungi and fruit trees",
+        "Human lungs only",
+        "Cereal grains only",
+        "Mushroom caps"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which symptom is characteristic of moniliosis?",
+      "options": [
+        "Fruit rot",
+        "White powder only on leaves",
+        "Red mushroom caps",
+        "Root formation"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which disease is characterized by powder-like fungal growth on plant surfaces?",
+      "options": [
+        "Powdery mildew",
+        "Moniliosis",
+        "Ergot",
+        "Aspergillosis"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which observation most strongly suggests powdery mildew?",
+      "options": [
+        "A white coating on leaves",
+        "A dark structure replacing cereal grains",
+        "Rotting fruit with brown growth",
+        "A red mushroom cap"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which major consequence can fungal plant diseases such as powdery mildew have?",
+      "options": [
+        "Reduced photosynthetic performance and plant health",
+        "Increased chloroplast production in fungi",
+        "Leaves becoming roots",
+        "Ethanol production"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which fungus causes ergot?",
+      "options": [
+        "Claviceps purpurea",
+        "Botrytis cinerea",
+        "Aspergillus niger",
+        "Penicillium chrysogenum"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Ergot most commonly affects:",
+      "options": [
+        "Cereals and grasses",
+        "Grapevines only",
+        "Fruit trees only",
+        "Mushrooms"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Why is ergot contamination of cereals dangerous?",
+      "options": [
+        "The fungus can produce toxic alkaloids",
+        "It increases vitamins",
+        "It makes grain photosynthetic",
+        "It removes carbohydrates"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What are ergot alkaloids?",
+      "options": [
+        "Biologically active compounds produced by ergot fungi",
+        "Plant cell walls",
+        "Bacterial proteins",
+        "Fungal spores"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "Which statement about ergot alkaloids is most accurate?",
+      "options": [
+        "They can have major physiological effects and some have pharmaceutical importance",
+        "They are harmless",
+        "They are simply spores",
+        "They are identical to chitin"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    },
+    {
+      "q": "What is mycorrhiza?",
+      "options": [
+        "A mutualistic association between fungi and plant roots",
+        "A bacterial disease",
+        "A mushroom cap",
+        "A fungal reproductive organ"
+      ],
+      "answer": "A",
+      "category": "Quick Practice"
+    }
+  ],
+  "Challenge": [
+    {
+      "q": "A fungus grows through dead wood and secretes enzymes that break down polymers outside its cells. Which nutritional strategy is this?",
+      "options": [
+        "Parasitism",
+        "Saprotrophy",
+        "Predation",
+        "Photosynthesis"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Why does the filamentous structure of fungal hyphae provide an advantage for nutrient acquisition?",
+      "options": [
+        "It allows a large surface area to contact the substrate",
+        "It allows the fungus to photosynthesize",
+        "It eliminates the need for extracellular enzymes",
+        "It prevents water from entering the fungus"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which combination correctly compares fungi and animals?",
+      "options": [
+        "Both are autotrophic",
+        "Both store glycogen and are heterotrophic",
+        "Both have cellulose cell walls",
+        "Both possess chloroplasts"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which combination correctly compares fungi and plants?",
+      "options": [
+        "Both are primarily heterotrophic",
+        "Both have chitinous cell walls",
+        "Both are eukaryotic and generally have cell walls",
+        "Both store glycogen as their main reserve carbohydrate"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "A scientist discovers an organism with chitin in its cell wall, no chlorophyll, and absorptive nutrition. Which group is most likely?",
+      "options": [
+        "Plants",
+        "Fungi",
+        "Animals",
+        "Cyanobacteria"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Why is calling fungi “non-photosynthetic plants” biologically misleading?",
+      "options": [
+        "Fungi are prokaryotes",
+        "Fungi belong to a separate major eukaryotic lineage and have fundamentally different nutrition",
+        "Plants cannot reproduce",
+        "Fungi lack DNA"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which feature would provide the strongest evidence that an unknown organism is fungal rather than bacterial?",
+      "options": [
+        "It is microscopic",
+        "It contains DNA",
+        "It has eukaryotic cells and a chitin-containing cell wall",
+        "It reproduces"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "A fungus secretes enzymes onto a piece of food and absorbs the resulting small molecules. Why is this particularly important for fungi?",
+      "options": [
+        "They generally obtain nutrients by extracellular digestion followed by absorption",
+        "They cannot produce enzymes",
+        "Their cells lack membranes",
+        "They perform intracellular photosynthesis"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which change would most directly reduce fungal nutrient absorption?",
+      "options": [
+        "Increasing the surface area of the mycelium",
+        "Blocking secretion of extracellular digestive enzymes",
+        "Increasing hyphal branching",
+        "Increasing substrate contact"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Why can fungi be important decomposers even when animals cannot digest the same material efficiently?",
+      "options": [
+        "Fungi can secrete enzymes capable of breaking down complex polymers",
+        "Fungi have chloroplasts",
+        "Fungi consume sunlight",
+        "Fungi convert cellulose directly into DNA"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A *Mucor* sporangium is damaged before the spores mature. Which process would be most directly affected?",
+      "options": [
+        "Release of sporangiospores",
+        "Photosynthesis",
+        "Formation of chloroplasts",
+        "Absorption of minerals by plant roots"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which structure most strongly indicates a *Mucor*-type reproductive strategy?",
+      "options": [
+        "Basidium bearing four spores",
+        "Sporangium containing numerous spores",
+        "Mushroom gills",
+        "Ascus containing ascospores"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Two compatible *Mucor* hyphae fuse and eventually form a resistant sexual structure. What has most likely formed?",
+      "options": [
+        "Basidium",
+        "Zygospore",
+        "Ascospore",
+        "Conidium"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Why is sexual reproduction potentially advantageous for fungi?",
+      "options": [
+        "It can generate genetic variation",
+        "It always occurs faster",
+        "It eliminates meiosis",
+        "It produces genetically identical offspring"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which statement correctly distinguishes sporangiospores from zygospores in *Mucor*?",
+      "options": [
+        "Both are produced only by sexual reproduction",
+        "Sporangiospores are typically asexual, while zygospores arise through sexual reproduction",
+        "Zygospores are produced in basidia",
+        "Sporangiospores are produced by animals"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "A fungus produces sexual spores inside microscopic sac-like structures. Which group is indicated?",
+      "options": [
+        "Basidiomycetes",
+        "Ascomycetes",
+        "Mucorales",
+        "Bacteria"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "A researcher observes spores developing externally on specialized club-shaped structures. What is the likely structure?",
+      "options": [
+        "Ascus",
+        "Basidium",
+        "Sporangium",
+        "Hypha"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which observation would distinguish a basidiomycete from an ascomycete?",
+      "options": [
+        "Presence of DNA",
+        "Presence of hyphae",
+        "Sexual spores developing on basidia rather than inside asci",
+        "Ability to grow on organic matter"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "A mushroom has a visible fruiting body, but the organism's main body is actually:",
+      "options": [
+        "The cap alone",
+        "The underground/hidden mycelium",
+        "The spores only",
+        "The gills only"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Why is the mushroom fruiting body not equivalent to the entire organism?",
+      "options": [
+        "It is a specialized reproductive structure arising from a larger fungal body",
+        "It contains no fungal cells",
+        "It is actually a plant organ",
+        "It is composed exclusively of spores"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Two yeast species are compared. Species X produces a small daughter cell as a bud, while species Y divides across its middle. Which identification is most consistent?",
+      "options": [
+        "X = *Schizosaccharomyces*, Y = *Saccharomyces*",
+        "X = *Saccharomyces*, Y = *Schizosaccharomyces*",
+        "Both must be *Mucor*",
+        "Both must be *Penicillium*"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "A yeast culture is placed in an environment containing plenty of glucose but very little oxygen. Which process can allow ATP production to continue through glycolysis?",
+      "options": [
+        "Alcoholic fermentation",
+        "Photosynthesis",
+        "Nitrogen fixation",
+        "Protein synthesis"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why is carbon dioxide produced during alcoholic fermentation useful in bread making?",
+      "options": [
+        "It chemically dissolves the flour",
+        "It forms gas bubbles that expand the dough",
+        "It sterilizes the dough",
+        "It converts ethanol into glucose"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which change would most directly increase ethanol production by yeast, assuming glucose is available?",
+      "options": [
+        "Providing conditions suitable for alcoholic fermentation",
+        "Removing all glucose",
+        "Destroying the yeast cells",
+        "Eliminating all carbohydrates"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "If yeast converts 1 molecule of glucose according to the simplified fermentation equation, how many molecules of CO₂ are produced?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "6"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "If yeast produces ethanol but no carbon dioxide is detected, which observation would most strongly suggest that the expected fermentation pathway is not occurring normally?",
+      "options": [
+        "Glucose is present",
+        "The yeast is alive",
+        "Ethanol production occurs without the expected CO₂ production",
+        "The temperature is measured"
+      ],
+      "answer": "C"
+    },
+    {
+      "q": "Which pair contains two products of alcoholic fermentation rather than substrates?",
+      "options": [
+        "Glucose and oxygen",
+        "Ethanol and carbon dioxide",
+        "Water and oxygen",
+        "Glucose and ethanol"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Why is fermentation less energetically efficient than complete aerobic respiration?",
+      "options": [
+        "Glucose is only partially oxidized",
+        "No glucose is consumed",
+        "It produces oxygen",
+        "It requires chloroplasts"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why can *Candida albicans* be present without causing disease in some people?",
+      "options": [
+        "It can exist as part of the normal microbiota and host conditions can restrict its growth",
+        "It is not a fungus",
+        "It cannot reproduce",
+        "It is always killed by the immune system"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why can broad-spectrum antibiotic treatment sometimes increase the risk of candidiasis?",
+      "options": [
+        "It can disrupt bacterial members of the normal microbiota that compete with *Candida*",
+        "It directly turns *Candida* into bacteria",
+        "It provides chlorophyll to *Candida*",
+        "It permanently destroys all fungal cells"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which situation best illustrates opportunistic pathogenicity?",
+      "options": [
+        "A harmless environmental fungus decomposes a dead leaf",
+        "A normally controlled *Candida* population causes disease when host defenses are compromised",
+        "A plant performs photosynthesis",
+        "A mushroom releases spores"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which statement about gastrointestinal candidiasis is most accurate?",
+      "options": [
+        "It is caused by a virus",
+        "It involves *Candida* infection of the gastrointestinal tract",
+        "It is caused exclusively by bacteria",
+        "It is a plant disease"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Fleming noticed bacterial growth was inhibited around a fungal colony. What was the most reasonable hypothesis?",
+      "options": [
+        "The fungus was consuming all the oxygen",
+        "The fungus was producing an antibacterial substance",
+        "The bacteria were photosynthesizing",
+        "The agar had become radioactive"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Why was Fleming's observation alone not sufficient to make penicillin a widely used medicine?",
+      "options": [
+        "The observation did not automatically provide a method for purification, dosage, testing, and mass production",
+        "He had discovered a virus",
+        "Bacteria do not respond to antibiotics",
+        "Penicillin cannot affect bacteria"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What was particularly important about the work of Florey and Chain?",
+      "options": [
+        "They transformed penicillin from an observation into a practically usable antibacterial treatment",
+        "They discovered fermentation",
+        "They discovered fungi",
+        "They invented microscopes"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why does inhibition of bacterial cell-wall synthesis selectively harm bacteria?",
+      "options": [
+        "Human cells and many animal cells do not have bacterial-type peptidoglycan cell walls",
+        "Human cells have chloroplasts",
+        "Bacteria are eukaryotic",
+        "Penicillin destroys DNA in every cell"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A bacterium has acquired a gene encoding an enzyme that destroys penicillin. What type of resistance mechanism is this?",
+      "options": [
+        "Antibiotic degradation/inactivation",
+        "Photosynthesis",
+        "Fermentation",
+        "Osmosis"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why can antibiotic use select for resistance even if the antibiotic does not directly “teach” bacteria how to resist it?",
+      "options": [
+        "Resistant variants can survive and reproduce while susceptible bacteria are removed",
+        "Antibiotics create identical resistant bacteria every time",
+        "Antibiotics turn bacteria into fungi",
+        "Resistance never involves natural variation"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which scenario would most strongly promote selection for antibiotic resistance?",
+      "options": [
+        "An antibiotic is present and susceptible bacteria are killed while resistant bacteria survive",
+        "No bacteria are exposed",
+        "All bacteria are genetically identical and none survive",
+        "The antibiotic is used only against viruses"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why can resistance genes spread between bacteria even if they did not originate in the recipient cell?",
+      "options": [
+        "Bacteria can exchange genetic material",
+        "Bacteria can photosynthesize",
+        "Fungi transfer chloroplasts",
+        "Antibiotics become DNA"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which statement best describes antibiotic resistance?",
+      "options": [
+        "The human body becomes immune to antibiotics",
+        "A bacterial population becomes less susceptible through inherited or acquired mechanisms",
+        "Antibiotics stop existing",
+        "All microorganisms become resistant simultaneously"
+      ],
+      "answer": "B"
+    },
+    {
+      "q": "Which pairing is correct?",
+      "options": [
+        "*P. roquefortii* — blue cheese production",
+        "*P. chrysogenum* — noble rot",
+        "*P. notatum* — alcoholic fermentation",
+        "*P. roquefortii* — citric acid production"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which pairing is correct?",
+      "options": [
+        "*P. chrysogenum* — penicillin production",
+        "*P. roquefortii* — ergot",
+        "*P. notatum* — aspergillosis",
+        "*P. chrysogenum* — moniliosis"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why can different *Penicillium* species have completely different economic roles?",
+      "options": [
+        "Different species have different metabolic capabilities and ecological adaptations",
+        "All *Penicillium* species are genetically identical",
+        "Only the color of their spores matters",
+        "Their roles are determined by whether they are plants"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why can *Botrytis cinerea* sometimes be beneficial in winemaking?",
+      "options": [
+        "It can cause controlled water loss and concentration of compounds in grapes",
+        "It produces ethanol directly inside the grape",
+        "It prevents all microbial growth",
+        "It increases the water content of grapes"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What makes noble rot different from ordinary destructive grey mold?",
+      "options": [
+        "The environmental conditions and degree of infection can produce desirable changes in grapes",
+        "Noble rot is caused by bacteria",
+        "Noble rot does not involve *Botrytis*",
+        "Noble rot destroys all sugars"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why does water loss from infected grapes increase sugar concentration?",
+      "options": [
+        "Similar amounts of dissolved substances become concentrated in less water",
+        "The fungus converts all water into sugar",
+        "The grape begins photosynthesis after harvest",
+        "Sugar is produced by the mushroom cap"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why is *Aspergillus niger* useful for industrial citric acid production?",
+      "options": [
+        "It can produce and accumulate citric acid under suitable fermentation conditions",
+        "It converts citric acid into cellulose",
+        "It performs photosynthesis",
+        "It is a bacterium"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A food manufacturer needs a large-scale source of citric acid. Why might microbial fermentation be preferable to extracting it directly from lemons?",
+      "options": [
+        "Fermentation can produce large quantities under controlled conditions",
+        "Lemons contain no citric acid",
+        "Fungi cannot grow industrially",
+        "Citric acid only exists in fungi"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which combination is correct?",
+      "options": [
+        "*A. niger* — citric acid — fermentation",
+        "*A. niger* — penicillin — noble rot",
+        "*A. niger* — ethanol — mushroom formation",
+        "*A. niger* — ergot alkaloids — cheese ripening"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why are inhaled *Aspergillus* spores usually more problematic for immunocompromised people?",
+      "options": [
+        "Their immune defenses may be less able to prevent fungal growth and invasion",
+        "Their lungs contain chloroplasts",
+        "They cannot breathe oxygen",
+        "Their blood contains no white cells under any circumstances"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which chain best describes a possible route to pulmonary aspergillosis?",
+      "options": [
+        "Airborne spores → inhalation → respiratory tract → fungal growth",
+        "Spores → photosynthesis → bloodstream",
+        "Food → chloroplast → lungs",
+        "Antibiotic → spore → plant root"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why would an antibacterial antibiotic generally not be the primary treatment for aspergillosis?",
+      "options": [
+        "The pathogen is a fungus rather than a bacterium",
+        "Aspergillus has no cells",
+        "Antibiotics only work in plants",
+        "Fungi are viruses"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A fruit tree develops brown, rotting fruits covered by fungal growth. Which disease is most consistent with the syllabus?",
+      "options": [
+        "Moniliosis",
+        "Ergot",
+        "Aspergillosis",
+        "Candidiasis"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A plant leaf develops a conspicuous white powder-like coating. Which diagnosis is most consistent?",
+      "options": [
+        "Powdery mildew",
+        "Ergot",
+        "Noble rot",
+        "Candidiasis"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why can powdery mildew reduce plant productivity?",
+      "options": [
+        "It can interfere with healthy leaf function and plant growth",
+        "It supplies unlimited minerals to the plant",
+        "It converts leaves into roots",
+        "It increases photosynthetic surface area"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which observation would most strongly distinguish powdery mildew from moniliosis?",
+      "options": [
+        "White superficial growth on leaves rather than characteristic fruit rot",
+        "Presence of fungal hyphae",
+        "Presence of spores",
+        "Infection of a plant"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why is *Claviceps purpurea* particularly important in cereal production?",
+      "options": [
+        "It can replace developing grains with dark fungal structures containing alkaloids",
+        "It increases grain yield",
+        "It performs photosynthesis",
+        "It produces edible mushrooms on wheat"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why are ergot alkaloids medically significant?",
+      "options": [
+        "Some have biologically active effects and have been used as the basis for pharmaceutical compounds",
+        "They are simple sugars",
+        "They are fungal cell-wall components only",
+        "They have no effects on organisms"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A batch of rye contains significant amounts of ergot contamination. What is the main concern?",
+      "options": [
+        "Toxicity caused by fungal alkaloids",
+        "Excessive vitamin production",
+        "Increased oxygen production",
+        "Conversion of starch to cellulose"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A plant with mycorrhiza has access to a much larger volume of soil than its roots alone could effectively explore. Why?",
+      "options": [
+        "Fungal hyphae extend beyond the root system",
+        "The plant develops chloroplasts in its roots",
+        "The fungus replaces all plant roots",
+        "The plant begins consuming insects"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which exchange best represents a mycorrhizal relationship?",
+      "options": [
+        "Plant gives carbon compounds; fungus provides improved mineral/water acquisition",
+        "Plant gives oxygen; fungus gives sunlight",
+        "Plant gives DNA; fungus gives chloroplasts",
+        "Plant gives chitin; fungus gives cellulose"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What would happen if a mycorrhizal fungus were removed from a plant whose mineral uptake strongly depended on it?",
+      "options": [
+        "Mineral acquisition could decrease",
+        "Photosynthesis would immediately stop in all cases",
+        "The plant would become a fungus",
+        "The plant would produce antibiotics"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which structure is characteristic of ectomycorrhiza?",
+      "options": [
+        "A fungal mantle around the root and a Hartig net between root cells",
+        "A mushroom cap inside the nucleus",
+        "Basidia inside chloroplasts",
+        "Fungal spores replacing root hairs"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What is the key distinction between ectomycorrhiza and endomycorrhiza?",
+      "options": [
+        "The extent and location of fungal association with root tissues",
+        "One involves fungi and the other bacteria",
+        "One is always parasitic",
+        "Only ectomycorrhiza involves plants"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why would a plant potentially tolerate allocating sugars to a fungus?",
+      "options": [
+        "The fungus can provide services such as improved nutrient and water acquisition",
+        "Fungi always produce glucose for plants",
+        "Fungi replace photosynthesis",
+        "Plants cannot survive without eating fungi"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which situation would provide the strongest evidence for mutualism rather than parasitism?",
+      "options": [
+        "Both plant growth and fungal growth benefit from the interaction",
+        "The fungus benefits while the plant is damaged",
+        "The plant benefits while the fungus dies",
+        "Neither organism changes"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A mushroom has a ring around its stalk and a cup at its base. Which structures are these?",
+      "options": [
+        "Volva and annulus",
+        "Gill and basidium",
+        "AscUS and basidium",
+        "Pileus and mycelium"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What is the likely origin of an annulus?",
+      "options": [
+        "Remnant of the partial veil",
+        "Remnant of the entire veil",
+        "A modified root",
+        "A group of spores"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "What is the likely origin of a volva?",
+      "options": [
+        "Remnant of the universal veil",
+        "Remnant of a basidium",
+        "Modified gills",
+        "A fungal root"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A young mushroom is completely enclosed by a membrane. Which structure is responsible?",
+      "options": [
+        "Velum generale",
+        "Velum partiale",
+        "Annulus",
+        "Hymenium"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A membrane covers the developing gills but does not enclose the entire mushroom. Which structure is this?",
+      "options": [
+        "Velum partiale",
+        "Velum generale",
+        "Volva",
+        "Pileus"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which observation would suggest that spots on a mushroom cap are veil remnants?",
+      "options": [
+        "They occur as patches on the cap and can be removed or disappear with age",
+        "They are the fungal spores themselves",
+        "They are chloroplasts",
+        "They form the stalk"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why are mushroom identification features such as gills, pores, rings, and volvas useful?",
+      "options": [
+        "They provide morphological characteristics for distinguishing species",
+        "They reveal the mushroom's DNA sequence directly",
+        "They prove whether a mushroom is edible in every case",
+        "They indicate whether it is a plant"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which mushroom is associated with a pore/tube-based hymenium rather than typical gills?",
+      "options": [
+        "Porcini / *Boletus*",
+        "*Amanita muscaria*",
+        "Common button mushroom",
+        "Many *Agaricus* species"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which mushroom is particularly associated with a fan- or shelf-like woody fruiting body?",
+      "options": [
+        "Bracket/polypore fungus (tinder/conk-type mushroom)",
+        "Yeast",
+        "*Saccharomyces*",
+        "*Mucor*"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which mushroom is characteristically funnel-shaped with ridges rather than true thin gills?",
+      "options": [
+        "Chanterelle / *Cantharellus*",
+        "Amanita",
+        "Porcini",
+        "Puffball"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which mushroom is known for a striking red cap with white patches?",
+      "options": [
+        "Fly agaric / *Amanita muscaria*",
+        "Chanterelle",
+        "Porcini",
+        "Button mushroom"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which mushroom has a characteristic unpleasant odor often compared with carrion?",
+      "options": [
+        "Stinkhorn / *Phallus impudicus*",
+        "Chanterelle",
+        "Porcini",
+        "Button mushroom"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Why is the presence of a volva particularly important when identifying an *Amanita*?",
+      "options": [
+        "It can be an important diagnostic feature, including for distinguishing potentially poisonous species",
+        "It proves the mushroom is edible",
+        "It indicates the mushroom is a basidium",
+        "It indicates that the fungus is a yeast"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which combination contains only morphological mushroom terms?",
+      "options": [
+        "Stipe, pileus, annulus, volva",
+        "Ascus, glucose, ethanol, chitin",
+        "Hypha, penicillin, citric acid, glucose",
+        "Basidium, Candida, ergot, ethanol"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which structure is most directly associated with spore production in a mushroom?",
+      "options": [
+        "Hymenium",
+        "Volva",
+        "Stipe",
+        "Pileus cuticle"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "If the gills of a mushroom are removed, which function is most directly affected?",
+      "options": [
+        "Production and dispersal of sexual spores",
+        "Water absorption by roots",
+        "Fermentation",
+        "Photosynthesis"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A mushroom has tubes ending in pores underneath the cap. Which group is most likely?",
+      "options": [
+        "Boletes",
+        "Amanitas",
+        "Chanterelles",
+        "Yeasts"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which feature would most strongly distinguish a typical bolete from a typical agaric?",
+      "options": [
+        "Pores/tubes instead of blade-like gills",
+        "Presence of a cell wall",
+        "Presence of hyphae",
+        "Ability to form spores"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which sequence correctly connects a fungus with its application?",
+      "options": [
+        "*Saccharomyces* → alcoholic fermentation",
+        "*Aspergillus niger* → penicillin",
+        "*Botrytis* → citric acid",
+        "*Claviceps* → bread rising"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which sequence is correct?",
+      "options": [
+        "*P. roquefortii* → blue cheese",
+        "*P. chrysogenum* → noble rot",
+        "*Botrytis* → penicillin",
+        "*Saccharomyces* → ergot"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which combination contains only fungal products or processes with major human applications?",
+      "options": [
+        "Ethanol fermentation, penicillin, citric acid production",
+        "Photosynthesis, oxygen fixation, cellulose synthesis",
+        "Nitrogen fixation, chlorophyll, starch production",
+        "Peptidoglycan synthesis, viral replication, photosynthesis"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which scenario involves a fungus benefiting another organism rather than exploiting it?",
+      "options": [
+        "Mycorrhizal association",
+        "Moniliosis",
+        "Candidiasis",
+        "Ergot infection"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "Which pair represents two fundamentally different human consequences of fungi?",
+      "options": [
+        "Penicillin production and aspergillosis",
+        "Photosynthesis and oxygen production",
+        "Nitrogen fixation and cellulose synthesis",
+        "Chloroplast formation and starch storage"
+      ],
+      "answer": "A"
+    },
+    {
+      "q": "A fungus grows through dead wood and secretes enzymes that digest polymers outside its cells. What nutritional strategy is this?",
+      "options": [
+        "Parasitism",
+        "Saprotrophy",
+        "Photosynthesis",
+        "Predation"
+      ],
+      "answer": "B",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why does a network of fungal hyphae help nutrient acquisition?",
+      "options": [
+        "It creates a large surface area for contact with the substrate",
+        "It gives the fungus chloroplasts",
+        "It removes the need for enzymes",
+        "It prevents water uptake"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "A Mucor sporangium is damaged before spores mature. Which process is most directly affected?",
+      "options": [
+        "Release of sporangiospores",
+        "Photosynthesis",
+        "Chloroplast formation",
+        "Plant root uptake"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Which structure most strongly indicates a Mucor-type reproductive strategy?",
+      "options": [
+        "Basidium bearing four spores",
+        "Sporangium containing many spores",
+        "Mushroom gills",
+        "Ascus containing ascospores"
+      ],
+      "answer": "B",
+      "category": "Challenge"
+    },
+    {
+      "q": "Two compatible Mucor hyphae fuse and later form a resistant sexual structure. What formed?",
+      "options": [
+        "Basidium",
+        "Zygospore",
+        "Ascospore",
+        "Conidium"
+      ],
+      "answer": "B",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why can sexual reproduction be advantageous to fungi?",
+      "options": [
+        "It can generate genetic variation",
+        "It is always faster",
+        "It eliminates meiosis",
+        "It produces identical offspring"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Which statement distinguishes sporangiospores from zygospores in Mucor?",
+      "options": [
+        "Both are sexual",
+        "Sporangiospores are typically asexual, while zygospores arise through sexual reproduction",
+        "Zygospores form in basidia",
+        "Sporangiospores are produced by animals"
+      ],
+      "answer": "B",
+      "category": "Challenge"
+    },
+    {
+      "q": "A fungus has sexual spores inside sac-like structures. Which group is indicated?",
+      "options": [
+        "Basidiomycetes",
+        "Ascomycetes",
+        "Mucorales",
+        "Bacteria"
+      ],
+      "answer": "B",
+      "category": "Challenge"
+    },
+    {
+      "q": "A researcher sees spores developing externally on club-shaped structures. What structure is present?",
+      "options": [
+        "Ascus",
+        "Basidium",
+        "Sporangium",
+        "Hypha"
+      ],
+      "answer": "B",
+      "category": "Challenge"
+    },
+    {
+      "q": "What observation most directly distinguishes a basidiomycete from an ascomycete?",
+      "options": [
+        "DNA",
+        "Hyphae",
+        "Sexual spores developing on basidia rather than inside asci",
+        "Ability to grow on organic matter"
+      ],
+      "answer": "C",
+      "category": "Challenge"
+    },
+    {
+      "q": "A mushroom has a visible fruiting body. What is the organism's main body actually?",
+      "options": [
+        "The cap",
+        "The mycelium",
+        "The spores",
+        "The gills"
+      ],
+      "answer": "B",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why is a mushroom fruiting body not equivalent to the entire organism?",
+      "options": [
+        "It is a specialized reproductive structure arising from a larger fungal body",
+        "It contains no fungal cells",
+        "It is a plant organ",
+        "It consists only of spores"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why can yeast switch toward fermentation when oxygen is limited?",
+      "options": [
+        "Fermentation regenerates NAD+ so glycolysis can continue",
+        "It provides chlorophyll",
+        "It produces oxygen",
+        "It directly produces starch"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "If yeast fermentation stops producing CO2, what immediate effect would be expected in bread dough?",
+      "options": [
+        "Reduced gas formation and less rising",
+        "More oxygen production",
+        "Increased starch synthesis",
+        "Formation of basidia"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "A patient develops candidiasis after disruption of their normal microbiota. What concept best explains this?",
+      "options": [
+        "Opportunistic pathogenicity",
+        "Photosynthesis",
+        "Mutualism",
+        "Nitrogen fixation"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why can broad antibiotic treatment sometimes increase the risk of Candida overgrowth?",
+      "options": [
+        "It can disrupt competing bacterial members of the normal microbiota",
+        "It directly turns Candida into bacteria",
+        "It provides Candida with chlorophyll",
+        "It prevents fungal growth"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Fleming observes a clear zone around a Penicillium colony on a bacterial culture. What is the most reasonable interpretation?",
+      "options": [
+        "The fungus produces a substance inhibiting bacterial growth",
+        "The bacteria produce penicillin",
+        "The fungus is photosynthesizing",
+        "The bacteria have become viruses"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why was large-scale production important after penicillin's discovery?",
+      "options": [
+        "A useful drug requires sufficient quantities of a purified, stable product",
+        "Fleming had not observed bacteria",
+        "Penicillin only works in plants",
+        "Large-scale production creates antibiotic resistance intentionally"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "A bacterial population contains a few resistant variants before treatment. What is likely after antibiotic exposure?",
+      "options": [
+        "Resistant variants may survive and become more common",
+        "All bacteria become identical",
+        "The antibiotic creates the same mutation in every cell",
+        "The bacteria become fungi"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why can resistance spread between bacterial cells without arising independently in every cell?",
+      "options": [
+        "Bacteria can exchange genetic material",
+        "Bacteria photosynthesize",
+        "Antibiotics become DNA",
+        "Fungi donate chloroplasts"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "A vineyard shows grape leaves with symptoms caused by Plasmopara. Why is this interaction classified as parasitism rather than mutualism?",
+      "options": [
+        "The pathogen gains resources from a living host while reducing host fitness",
+        "Both partners exchange carbon equally",
+        "The grapevine benefits from the pathogen",
+        "The pathogen only decomposes dead tissue"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why can a fungal pathogen be difficult to control once established in plant tissue?",
+      "options": [
+        "Hyphae can grow through and exploit living host tissues",
+        "The fungus always becomes a bacterium",
+        "The host loses all DNA",
+        "Fungi cannot be affected by any treatment"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "A grape has undergone noble rot and lost water while retaining dissolved sugars. What happens to sugar concentration?",
+      "options": [
+        "It increases because the solutes are concentrated in less water",
+        "It decreases to zero",
+        "It stays necessarily unchanged",
+        "The sugar becomes cellulose"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why can the same species Botrytis cinerea be associated with both grey mold and valuable wine production?",
+      "options": [
+        "The outcome depends strongly on environmental conditions and infection development",
+        "It is two unrelated species",
+        "Noble rot is bacterial",
+        "Grey mold is caused by a virus"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why is Aspergillus niger suitable for industrial citric acid production?",
+      "options": [
+        "It can accumulate and release large amounts of citric acid under controlled cultivation",
+        "It performs photosynthesis",
+        "It produces penicillin as its main product",
+        "It infects grapevine"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "A person inhales Aspergillus spores but has normal immune function. Why does this not necessarily result in invasive disease?",
+      "options": [
+        "Effective host defenses can prevent establishment and invasion",
+        "The spores are always sterile",
+        "Aspergillus cannot enter lungs",
+        "All Aspergillus species are harmless"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why is invasive aspergillosis especially dangerous for severely immunocompromised people?",
+      "options": [
+        "The immune system may fail to contain hyphal growth and tissue invasion",
+        "Their cells have no DNA",
+        "Their lungs become photosynthetic",
+        "The fungus becomes a virus"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "A cereal sample contains Claviceps contamination. Which component creates the major toxicological concern?",
+      "options": [
+        "Ergot alkaloids",
+        "Citric acid",
+        "Ethanol",
+        "Penicillin"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why can ergot alkaloids have strong physiological effects?",
+      "options": [
+        "They are biologically active molecules that can interact with animal receptors and pathways",
+        "They are inert cell-wall materials",
+        "They are simply fungal spores",
+        "They are carbohydrates identical to cellulose"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "A plant with mycorrhiza has access to more soil volume than roots alone could explore. Why?",
+      "options": [
+        "Fungal hyphae extend beyond the root system",
+        "The plant develops extra chloroplasts",
+        "The fungus replaces all roots",
+        "The plant begins eating insects"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Which exchange best represents a mycorrhizal relationship?",
+      "options": [
+        "Plant gives carbon compounds; fungus improves mineral and water acquisition",
+        "Plant gives oxygen; fungus gives sunlight",
+        "Plant gives DNA; fungus gives chloroplasts",
+        "Plant gives chitin; fungus gives cellulose"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "What could happen if a mycorrhizal fungus were removed from a plant strongly dependent on it for mineral uptake?",
+      "options": [
+        "Mineral acquisition could decrease",
+        "Photosynthesis would always stop immediately",
+        "The plant would become a fungus",
+        "The plant would produce penicillin"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Which structure is characteristic of ectomycorrhiza?",
+      "options": [
+        "A fungal mantle around the root and a Hartig net between root cells",
+        "A mushroom cap inside the nucleus",
+        "Basidia inside chloroplasts",
+        "Spores replacing root hairs"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "What is the key distinction between ectomycorrhiza and endomycorrhiza?",
+      "options": [
+        "The extent and location of fungal association with root tissues",
+        "One involves fungi and the other bacteria",
+        "One is always parasitic",
+        "Only ectomycorrhiza involves plants"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "A mushroom has both a ring around its stalk and a cup at its base. Which structures are these?",
+      "options": [
+        "Annulus and volva",
+        "Gill and basidium",
+        "Ascus and basidium",
+        "Pileus and mycelium"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "What is the likely origin of an annulus?",
+      "options": [
+        "A remnant of the partial veil",
+        "A remnant of the entire veil",
+        "A modified root",
+        "A group of spores"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "What is the likely origin of a volva?",
+      "options": [
+        "A remnant of the universal veil",
+        "A remnant of a basidium",
+        "Modified gills",
+        "A fungal root"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "A mushroom has tubes ending in pores beneath its cap. Which group is most likely?",
+      "options": [
+        "Boletes",
+        "Amanitas",
+        "Typical agarics",
+        "Yeasts"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "What most strongly distinguishes a typical bolete from a typical agaric?",
+      "options": [
+        "Pores/tubes instead of blade-like gills",
+        "Presence of a cell wall",
+        "Presence of hyphae",
+        "Ability to form spores"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    },
+    {
+      "q": "Why can a volva be useful in identifying Amanita species?",
+      "options": [
+        "It can be an important diagnostic feature, including in recognizing potentially poisonous species",
+        "It proves the mushroom is edible",
+        "It indicates the fungus is a yeast",
+        "It is the same thing as a basidium"
+      ],
+      "answer": "A",
+      "category": "Challenge"
+    }
+  ],
+  "True or False": [
+    {
+      "q": "Fungi are eukaryotic organisms.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "All fungi are multicellular.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "Fungal cell walls commonly contain chitin.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Fungi obtain their nutrients primarily through photosynthesis.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "Fungal hyphae can greatly increase the surface area available for nutrient absorption.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Fungi are evolutionarily closer to animals than to plants.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Glycogen is an important storage carbohydrate in fungi.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "All fungi are parasites.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "Fungi can act as decomposers.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Fungi can form mutualistic relationships with plants.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Ascospores are produced in asci.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Basidiospores are produced on basidia.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "A basidium is the characteristic sexual spore-producing structure of ascomycetes.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "*Mucor* can reproduce using spores formed inside sporangia.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Zygospores are associated with sexual reproduction in traditional zygomycete classification.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "*Saccharomyces cerevisiae* commonly reproduces asexually by budding.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "*Schizosaccharomyces pombe* characteristically reproduces by budding.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "Alcoholic fermentation produces ethanol and carbon dioxide.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Carbon dioxide from yeast fermentation contributes to the rising of bread dough.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Alcoholic fermentation requires complete oxidation of glucose to CO₂ and water.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "*Candida albicans* can behave as an opportunistic pathogen.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Candidiasis is caused by bacteria.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "Penicillin was discovered through an observation involving *Penicillium*.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Alexander Fleming developed the entire industrial production process for penicillin by himself immediately after discovering it.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "Florey and Chain played important roles in developing penicillin into a useful treatment.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Penicillin primarily interferes with bacterial cell-wall synthesis.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Antibiotics are generally effective against viruses.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "Antibiotic resistance can be favored by natural selection.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "*Penicillium roquefortii* is associated with blue cheese production.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "*Penicillium chrysogenum* is associated with industrial penicillin production.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "*Botrytis cinerea* can cause grey mold.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Noble rot is always harmful to wine production.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "Noble rot can cause water loss and concentration of compounds in grapes.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "*Aspergillus niger* is used industrially for citric acid production.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Aspergillosis is caused by bacteria.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "Invasive aspergillosis is particularly concerning in severely immunocompromised people.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Powdery mildew typically produces a white, powdery-looking growth on plant surfaces.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Moniliosis is primarily associated with human gastrointestinal infections.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "*Claviceps purpurea* is associated with ergot disease of cereals and grasses.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Ergot alkaloids are biologically inactive compounds.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "Mycorrhiza involves an association between fungi and plant roots.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "In a typical mycorrhizal relationship, the plant provides the fungus with organic carbon.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Ectomycorrhiza and endomycorrhiza differ partly in how the fungal structures interact with root tissues.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Mycorrhiza is always a parasitic relationship.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "The stipe is the cap of a mushroom.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "q": "The pileus is the cap of a typical mushroom.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "An annulus can be a remnant of the partial veil.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "A volva is typically found around the base of the stalk in mushrooms that retain a universal veil.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "The white spots on the cap of *Amanita muscaria* can be remnants of the universal veil.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "q": "Every mushroom with a cap and stalk is safe to eat.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    }
+  ]
+}
